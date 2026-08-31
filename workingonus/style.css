@@ -1,3 +1,4 @@
+/* Color palette used throughout the site */
 :root {
     --navy: #1c3d5a;
     --green: #4f7942;
@@ -6,6 +7,7 @@
     --ink: #223142;
 }
 
+/* Global reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,11 +20,17 @@ body {
     background: var(--cream);
 }
 
+/* Site header bar (logo + nav) */
 header {
     text-align: center;
     background-color: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
 }
 
+/* Default h1 styling (overridden in some sections below, e.g. .hero-text h1) */
 h1 {
     color: var(--navy);
     font-family: 'Fraunces', serif;
@@ -30,6 +38,7 @@ h1 {
     margin: 20px 0;
 }
 
+/* Nav link list */
 ul {
     list-style-type: none;
     padding: 0;
@@ -39,6 +48,7 @@ ul {
     gap: 20px;
 }
 
+/* Shared base styling for all buttons/button-like links */
 .btn {
     padding: 12px 32px;
     margin: 10px;
@@ -50,15 +60,17 @@ ul {
     transition: all 0.3s ease;
 }
 
+/* Solid yellow CTA button */
 .btn-primary {
     background-color: var(--yellow);
     color: var(--navy);
-    white-space: nowrap; 
+    white-space: nowrap;
     padding: 24px 32px 20px 30px;
     border: white solid 2px;
 
 }
 
+/* Secondary CTA button (currently filled yellow like btn-primary, despite the "outline" name) */
 .btn-outline {
     background-color: transparent;
     color: var(--navy);
@@ -68,7 +80,7 @@ ul {
     background-color: var(--yellow);
 
 
-    
+
 
 }
 
@@ -78,6 +90,7 @@ ul {
     padding: 60px 0;
 }
 
+/* Two-column layout: intro text on the left, highlight card on the right */
 .hero-grid {
     display: flex;
     justify-content: space-between;
@@ -92,6 +105,7 @@ ul {
     flex: 1;
 }
 
+/* Hero heading reads light on the dark navy background */
 .hero-text h1 {
     color: #f5f5f5;
     text-align: left;
@@ -104,12 +118,14 @@ ul {
     margin: 20px 0;
 }
 
+/* Row of CTA buttons under the hero copy */
 .hero-actions {
     display: flex;
     gap: 16px;
     margin-top: 20px;
 }
 
+/* White callout card on the right side of the hero */
 .hero-card {
     flex: 1;
     background-color: #fff;
@@ -130,6 +146,7 @@ ul {
     line-height: 1.4;
 }
 
+/* Small pill/badge, e.g. "Today's chapter" on the hero card */
 .chip {
     display: inline-block;
     background-color: var(--yellow);
@@ -151,7 +168,6 @@ ul {
     border: 4px solid var(--green);
     border-bottom: 2px solid var(--navy);
 }
-
 .welcome h2 {
     color: var(--green);
     font-family: 'Fraunces', serif;
@@ -159,6 +175,7 @@ ul {
     margin: 20px 0;
 }
 
+/* Small italic label used above section headings ("Chapter one --- Welcome", etc.) */
 .eyebrow {
     color: var(--green);
     font-family: 'Fraunces', serif;
@@ -172,18 +189,24 @@ ul {
     display:block;
 }
 
+
+/* Big heading in the Welcome section */
 .welcome-heading {
     color: var(--navy);
     line-height: 1.15;
     font-size: 38px;
     margin: 20px 0 20px;
 }
+
+/* Big heading in the Services section */
 .services-heading {
     color: var(--navy);
     line-height: 1.15;
     font-size: 38px;
     margin: 20px 0 20px;
 }
+
+/* Intro paragraph under the Services heading */
 .services p {
     color: var(--ink);
     font-size: 18px;
@@ -194,6 +217,7 @@ ul {
 }
 
 
+/* 4-column responsive grid of service cards (collapses via media queries below) */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -209,6 +233,7 @@ ul {
     transition: transform 0.2s ease;
 }
 
+/* Lift effect on hover */
 .service-card:hover {
     transform: translateY(-4px);
 }
@@ -233,20 +258,189 @@ ul {
     max-width: none;
 }
 
+/* "Learn more →" text link on each service card */
 .link {
     color: var(--green);
     font-weight: 600;
     font-size: 0.9rem;
 }
 
+/* Tablet: drop the service grid to 2 columns */
 @media (max-width: 900px) {
     .service-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Mobile: stack the service grid to 1 column */
 @media (max-width: 560px) {
     .service-grid {
         grid-template-columns: 1fr;
     }
 }
+
+/* NOTE: defined but not referenced by any class in index.html (patient cards
+   are laid out individually, not inside a shared grid wrapper) */
+.patient-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+}
+
+/* Wrapper around each FAQ question/answer pair */
+.patient-card {
+    background: #fff;
+    border-bottom: var(--ink) solid 1px;
+
+    padding:20px  20px;
+    box-shadow: none;
+    transition: transform 0.2s ease;
+}
+
+/* FAQ toggle button (the question text) */
+.question-btn {
+    background-color: var(--green);
+    color: var(--cream);
+    border: none;
+    text-align: left;
+    padding: 14px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+/* The "+" indicator, absolutely positioned and vertically centered on the button */
+.question-btn::after {
+    content: ' + ';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* When style.js toggles .open on the button, spin the "+" into an "×" */
+.question-btn.open::after{
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* Collapsed answer panel (height animated open/closed via max-height) */
+.answer {
+    max-height: 0;
+    overflow:hidden;
+    transition:max-height 0.3s ease;
+    padding: 0;
+    background-color: var(--cream);
+    border-left: 4px solid var(--green);
+    border-radius: 5px;
+}
+
+/* Expanded state, toggled by style.js */
+.answer.open {
+    max-height: 2000px;
+
+}
+
+/* Header logo/site name */
+.logo {
+
+    color: var(--navy);
+    font-weight: 800;
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+
+
+
+
+
+}
+
+/* Nav links */
+nav a {
+
+    font-weight: 500;
+    font-size: .97rem;
+    color: var(--navy);
+    text-decoration: none;
+    position: relative;
+}
+
+/* Underline element for nav links, animated in on hover below */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--green);
+    transition: width .3s ease, background-color .3s ease;
+    -webkit-transition: width .3s ease, background-color .3s ease;
+}
+
+/* Grow the underline from left to right on hover */
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--green);
+}
+
+.patient_link {
+
+    font-weight: 500;
+    font-size: .97rem;
+    color: var(--navy);
+    text-decoration: none;
+    position: relative;
+}
+.patient_link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--green);
+    transition: width .3s ease, background-color .3s ease;
+    -webkit-transition: width .3s ease, background-color .3s ease;
+}
+
+/* Grow the underline from left to right on hover */
+.patient_link:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--green);
+}
+
+
+.team-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 100px;
+}
+
+.team-image img {
+    border: 4px solid var(--green);
+    border-radius: 12px;
+}
+
+.ourstory{
+    font-family: 'Fraunces', serif;
+    background-color:var(--navy);
+    p {color: #f5f5f5;
+        font-family: 'Fraunces', serif;}
+    h1{color:#f5f5f5;
+        font-family: 'Fraunces', serif;}
+    h2{color:#f5f5f5;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: normal;
+        font-family: 'Fraunces', serif;}
+}
+
