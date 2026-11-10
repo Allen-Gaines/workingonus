@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal — Working On Us</title>
+    <meta name="description" content="Demo patient portal sign-in for Working On Us.">
+    <!-- Demo portal pages shouldn't show up in search results -->
+    <meta name="robots" content="noindex">
+    <!-- Portal-only script: demo login, dashboard tabs and sample data -->
+    <script src="js/portal.js" defer></script>
+
+    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="faq.html">Patients</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the demo patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Patient portal sign-in (DEMO). Logic lives in js/portal.js -->
+<section class="portal-login">
+    <div class="portal-login-card">
+        <div class="demo-banner" role="note"><strong>Demo only.</strong> This portal is a class project that uses sample data. Please don't enter real health or personal information here. Current patients, call <a href="tel:+19102572815">(910) 257-2815</a> for access to the practice's official portal.</div>
+
+        <h1>Patient Portal</h1>
+        <p class="portal-sub">Sign in to see your appointments, messages, forms, and billing.</p>
+
+        <form id="login-form" novalidate>
+            <div class="form-row">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" autocomplete="username">
+                <span class="error-msg" id="login-email-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+                <label for="login-password">Password</label>
+                <!-- Password box + show/hide button side by side -->
+                <div class="password-wrap">
+                    <input type="password" id="login-password" name="password" autocomplete="current-password">
+                    <button type="button" class="show-pass" id="show-pass" aria-pressed="false" aria-controls="login-password">Show</button>
+                </div>
+                <span class="error-msg" id="login-password-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Shown when the email/password don't match the demo account -->
+            <p class="login-error" id="login-error" role="alert"></p>
+
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        </form>
+
+        <!-- Demo credentials so graders can get in -->
+        <div class="demo-creds">
+            <p><strong>Demo account</strong></p>
+            <p>Email: <code>demo@workingonus.com</code><br>Password: <code>Demo1234</code></p>
+            <button type="button" class="text-btn" id="fill-demo">Fill these in for me</button>
+        </div>
+
+        <p class="portal-help">
+            <button type="button" class="text-btn" id="forgot-btn" aria-expanded="false" aria-controls="forgot-msg">Forgot your password?</button>
+        </p>
+        <p class="forgot-msg" id="forgot-msg" hidden>In a real portal you'd get a secure reset link by email. For this demo, use the account above.</p>
+    </div>
+
+    <!-- What patients can do in the portal -->
+    <aside class="portal-features">
+        <p class="eyebrow">Your care, in one place</p>
+        <h2>What you can do</h2>
+        <ul class="feature-list">
+            <li><span aria-hidden="true">📅</span><div><strong>Appointments</strong>See upcoming visits, request a new one, or cancel.</div></li>
+            <li><span aria-hidden="true">💬</span><div><strong>Messages</strong>Send non-urgent questions to our office.</div></li>
+            <li><span aria-hidden="true">📝</span><div><strong>Forms</strong>Check which intake forms still need to be filled out.</div></li>
+            <li><span aria-hidden="true">💳</span><div><strong>Billing</strong>Review statements and your balance.</div></li>
+        </ul>
+        <p class="crisis-note">Messages aren't for emergencies. If you're in crisis, call or text <strong>988</strong>, or call <strong>911</strong>.</p>
+    </aside>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+        </div>
+        <div>
+            <h4>Site</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">Patients</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="contact.html">1404 Raeford Road</a></li>
+                <li><a href="contact.html">Fayetteville, NC</a></li>
+                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Get Started</h4>
+            <ul>
+                <li><a href="contact.html">Request an Appointment</a></li>
+                <li><a href="faq.html">Insurance &amp; Billing</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
+        <!-- Image and font credits (Creative Commons / free-license sources) -->
+        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+    </div>
+</footer>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

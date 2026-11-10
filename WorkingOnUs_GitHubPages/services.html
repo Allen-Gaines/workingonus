@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services — Working On Us</title>
+    <meta name="description" content="Medication management, individual therapy, family counseling, and case management in Fayetteville, NC.">
+
+    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="faq.html">Patients</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the demo patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Page banner: navy band with breadcrumb, page title and intro -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Services</nav>
+        <p class="eyebrow">Services</p>
+        <h1>Our Services</h1>
+        <p>Every family's needs look different. Whether you're here for yourself, your child, or your whole household, our programs meet you where you are right now.</p>
+    </div>
+</section>
+
+<!-- Full services overview (medication management first: the practice's primary service).
+     Each card has an id so homepage "Learn more" links jump straight to it. -->
+<section class="page-wrap">
+    <div class="service-grid service-grid-wide">
+
+        <article class="service-card reveal" id="medication-management">
+            <div class="service-icon">💊</div>
+            <h2 class="card-title">Medication Management</h2>
+            <p>Ongoing psychiatric care that keeps your treatment plan on track and reviewed regularly. Our prescribers coordinate closely with your therapist so nothing about your care falls through the cracks.</p>
+        </article>
+
+        <article class="service-card reveal" id="individual-therapy">
+            <div class="service-icon">🧭</div>
+            <h2 class="card-title">Individual Therapy</h2>
+            <p>One-on-one sessions built around your pace, your goals, your story. Our licensed clinicians work with children, teens, and adults on anxiety, depression, trauma, life transitions, and more — in person or by telehealth.</p>
+        </article>
+
+        <article class="service-card reveal" id="family-counseling">
+            <div class="service-icon">👨‍👩‍👧</div>
+            <h2 class="card-title">Family Counseling</h2>
+            <p>Guided sessions that help families communicate and heal side by side. We create a steady, neutral space where every member of the family — parents, kids, and teens — has a voice.</p>
+        </article>
+
+        <article class="service-card reveal" id="case-management">
+            <div class="service-icon">🗂️</div>
+            <h2 class="card-title">Case Management</h2>
+            <p>A dedicated coordinator connecting you to the right resources at the right time — housing support, school advocacy, community programs, and everything in between.</p>
+        </article>
+
+    </div>
+
+    <div class="patient-more">
+        <a href="faq.html" class="patient_link">Not sure where to start? Read our patient FAQ →</a>
+    </div>
+</section>
+
+<!-- Call-to-action banner above the footer -->
+<section class="cta-strip reveal">
+    <h2>Ready to take the next step?</h2>
+    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+        </div>
+        <div>
+            <h4>Site</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">Patients</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="contact.html">1404 Raeford Road</a></li>
+                <li><a href="contact.html">Fayetteville, NC</a></li>
+                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Get Started</h4>
+            <ul>
+                <li><a href="contact.html">Request an Appointment</a></li>
+                <li><a href="faq.html">Insurance &amp; Billing</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
+        <!-- Image and font credits (Creative Commons / free-license sources) -->
+        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+    </div>
+</footer>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

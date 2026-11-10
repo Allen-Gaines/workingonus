@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portal — Working On Us</title>
+    <meta name="description" content="Demo patient portal dashboard for Working On Us.">
+    <!-- Demo portal pages shouldn't show up in search results -->
+    <meta name="robots" content="noindex">
+    <!-- Portal-only script: demo login, dashboard tabs and sample data -->
+    <script src="js/portal.js" defer></script>
+
+    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="faq.html">Patients</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the demo patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Patient portal dashboard (DEMO). Everything inside the panels is filled in by js/portal.js -->
+<section class="portal">
+    <div class="demo-banner slim" role="note"><strong>Demo only.</strong> This portal is a class project that uses sample data. Please don't enter real health or personal information here. Changes reset when you sign out.</div>
+
+    <div class="portal-layout">
+        <!-- Sidebar: who's signed in + section tabs -->
+        <aside class="portal-sidebar">
+            <div class="portal-user">
+                <div class="avatar" id="user-initials" aria-hidden="true">JR</div>
+                <div>
+                    <div class="name" id="user-name">Demo Patient</div>
+                    <div class="role">Patient</div>
+                </div>
+            </div>
+
+            <!-- ARIA tabs: arrow keys move between them (see portal.js) -->
+            <div class="portal-tabs" role="tablist" aria-label="Portal sections" aria-orientation="vertical">
+            <button role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true" tabindex="0" data-tab="overview">
+                <span aria-hidden="true">🏠</span> Overview <span class="tab-badge" id="badge-overview"></span>
+            </button>
+            <button role="tab" id="tab-appointments" aria-controls="panel-appointments" aria-selected="false" tabindex="-1" data-tab="appointments">
+                <span aria-hidden="true">📅</span> Appointments <span class="tab-badge" id="badge-appointments"></span>
+            </button>
+            <button role="tab" id="tab-messages" aria-controls="panel-messages" aria-selected="false" tabindex="-1" data-tab="messages">
+                <span aria-hidden="true">💬</span> Messages <span class="tab-badge" id="badge-messages"></span>
+            </button>
+            <button role="tab" id="tab-forms" aria-controls="panel-forms" aria-selected="false" tabindex="-1" data-tab="forms">
+                <span aria-hidden="true">📝</span> Forms <span class="tab-badge" id="badge-forms"></span>
+            </button>
+            <button role="tab" id="tab-billing" aria-controls="panel-billing" aria-selected="false" tabindex="-1" data-tab="billing">
+                <span aria-hidden="true">💳</span> Billing <span class="tab-badge" id="badge-billing"></span>
+            </button>
+            </div>
+
+            <button type="button" class="btn btn-signout" id="logout-btn">Sign Out</button>
+        </aside>
+
+        <div class="portal-main">
+            <!-- OVERVIEW -->
+            <section class="portal-panel" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" tabindex="0">
+                <h1 id="welcome-heading">Welcome back</h1>
+                <p class="panel-sub">Here's what's happening with your care.</p>
+                <div class="overview-grid" id="overview-cards"></div>
+            </section>
+
+            <!-- APPOINTMENTS -->
+            <section class="portal-panel" role="tabpanel" id="panel-appointments" aria-labelledby="tab-appointments" tabindex="0" hidden>
+                <h2>Appointments</h2>
+                <h3 class="list-heading">Upcoming</h3>
+                <ul class="portal-list" id="upcoming-list"></ul>
+
+                <h3 class="list-heading">Request an appointment</h3>
+                <form id="request-form" class="portal-form" novalidate>
+                    <div class="form-grid">
+                        <div class="form-row">
+                            <label for="req-type">Type of visit</label>
+                            <select id="req-type" name="type">
+                                <option value="">Choose one…</option>
+                                <option>Medication management</option>
+                                <option>Individual therapy</option>
+                                <option>Family counseling</option>
+                                <option>Case management</option>
+                            </select>
+                            <span class="error-msg" id="req-type-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-row">
+                            <label for="req-date">Preferred date</label>
+                            <input type="date" id="req-date" name="date">
+                            <span class="error-msg" id="req-date-error" aria-live="polite"></span>
+                        </div>
+                        <div class="form-row">
+                            <label for="req-time">Time of day</label>
+                            <select id="req-time" name="time">
+                                <option value="morning">Morning (9am – 12pm)</option>
+                                <option value="afternoon">Afternoon (1pm – 5pm)</option>
+                            </select>
+                        </div>
+                        <fieldset class="form-row radio-row">
+                            <legend>Visit format</legend>
+                            <label><input type="radio" name="format" value="In person" checked> In person</label>
+                            <label><input type="radio" name="format" value="Telehealth"> Telehealth</label>
+                        </fieldset>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Request</button>
+                </form>
+
+                <h3 class="list-heading">Past &amp; cancelled</h3>
+                <ul class="portal-list" id="past-list"></ul>
+            </section>
+
+            <!-- MESSAGES -->
+            <section class="portal-panel" role="tabpanel" id="panel-messages" aria-labelledby="tab-messages" tabindex="0" hidden>
+                <h2>Messages</h2>
+                <p class="crisis-note">For non-urgent questions only. If you're in crisis, call or text <strong>988</strong>, or call <strong>911</strong>.</p>
+                <div class="messages-layout">
+                    <ul class="message-list" id="message-list"></ul>
+                    <div class="message-reader" id="message-reader">
+                        <p class="empty-state">Choose a message to read it.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FORMS -->
+            <section class="portal-panel" role="tabpanel" id="panel-forms" aria-labelledby="tab-forms" tabindex="0" hidden>
+                <h2>Forms</h2>
+                <p class="panel-sub">Paperwork to finish before your visits. In the real portal these would open secure forms.</p>
+                <ul class="portal-list" id="forms-list"></ul>
+            </section>
+
+            <!-- BILLING -->
+            <section class="portal-panel" role="tabpanel" id="panel-billing" aria-labelledby="tab-billing" tabindex="0" hidden>
+                <h2>Billing</h2>
+                <div class="balance-card" id="balance-card"></div>
+                <h3 class="list-heading">Statements</h3>
+                <div class="table-wrap">
+                    <table class="statements">
+                        <thead>
+                            <tr><th scope="col">Date</th><th scope="col">Description</th><th scope="col">Amount</th><th scope="col">Status</th></tr>
+                        </thead>
+                        <tbody id="statements-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Pop-up confirmation message (also read out by screen readers) -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+        </div>
+        <div>
+            <h4>Site</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">Patients</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="contact.html">1404 Raeford Road</a></li>
+                <li><a href="contact.html">Fayetteville, NC</a></li>
+                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Get Started</h4>
+            <ul>
+                <li><a href="contact.html">Request an Appointment</a></li>
+                <li><a href="faq.html">Insurance &amp; Billing</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
+        <!-- Image and font credits (Creative Commons / free-license sources) -->
+        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+    </div>
+</footer>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

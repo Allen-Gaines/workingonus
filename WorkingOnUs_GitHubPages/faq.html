@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Questions — Working On Us</title>
+    <meta name="description" content="Answers to common questions about appointments, insurance, privacy, and telehealth at Working On Us.">
+
+    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="faq.html">Patients</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the demo patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Page banner: navy band with breadcrumb, page title and intro -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Patients</nav>
+        <p class="eyebrow">Patients</p>
+        <h1>Patient questions</h1>
+        <p>Everything you might want to know before your first visit — and a few things that come up along the way.</p>
+    </div>
+</section>
+
+<!-- Full patient FAQ: search box + same accordion pattern as the homepage -->
+<section class="Patients">
+    <!-- Live search: script.js hides questions that don't match what's typed -->
+    <div class="faq-search">
+        <label for="faq-filter">Search questions</label>
+        <input type="search" id="faq-filter" placeholder="Try “insurance” or “telehealth”" autocomplete="off">
+        <p id="faq-count" class="faq-count" aria-live="polite"></p>
+    </div>
+
+    <!-- Each .patient-card = one question button + its collapsible .answer -->
+    <div class="patient-card reveal">
+        <button class="question-btn">What happens during my first appointment?</button>
+        <p class="answer">Your first visit is about getting to know you, not diagnosing you. We'll talk through what brought you in, your history, and what support looks like for your life right now.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">Do you accept insurance?</button>
+        <p class="answer">We work with a range of insurance providers and offer guidance on payment options. Reach out to our office and we'll help you figure out what's covered.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">Is what I share confidential?</button>
+        <p class="answer">Yes. Your privacy is protected under federal law. For family and teen clients, we'll walk through together what's shared and what stays between us.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">How do I know if I need therapy, medication management, or both?</button>
+        <p class="answer">That's exactly what your first appointment helps figure out. Many families find a combination works best, and we'll build a plan around what fits you.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">How often will I need to come in?</button>
+        <p class="answer">It varies by person and goal. Some start weekly and taper down over time, others check in monthly. We'll set a schedule that works for you.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">What ages do you work with?</button>
+        <p class="answer">We serve children, teens, adults, and whole families. Several of our programs are designed specifically for families to attend together.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">How long is a typical session?</button>
+        <p class="answer">Most individual and family sessions run about 50 minutes. Medication management check-ins are usually shorter, and your first appointment may run a little longer so we have time to get to know you.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">Do you offer telehealth appointments?</button>
+        <p class="answer">Yes — many of our services are available virtually for clients across North Carolina. We'll help you decide whether in-person, telehealth, or a mix makes the most sense for you.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">What should I bring to my first visit?</button>
+        <p class="answer">A photo ID, your insurance card if you have one, and a list of any current medications. If another provider referred you, any records you have are helpful but not required.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">What if I need to cancel or reschedule?</button>
+        <p class="answer">Life happens — just give our office a call as soon as you can, ideally 24 hours ahead, and we'll find a time that works better for you.</p>
+    </div>
+
+    <div class="patient-card reveal">
+        <button class="question-btn">What if I'm in crisis right now?</button>
+        <p class="answer">If you or someone you love is in immediate danger, call 911. For mental health crisis support, call or text 988 (the Suicide &amp; Crisis Lifeline) any time, day or night. Then reach out to us — we'll help with the next step.</p>
+    </div>
+
+    <!-- Shown by script.js when the search matches nothing -->
+    <p id="faq-empty" class="faq-empty" hidden>No questions match that search. <a href="contact.html" class="patient_link">Ask us directly →</a></p>
+
+    <div class="patient-more">
+        <a href="contact.html" class="patient_link">Still have questions? Contact us →</a>
+    </div>
+</section>
+
+<!-- Call-to-action banner above the footer -->
+<section class="cta-strip reveal">
+    <h2>Ready to take the next step?</h2>
+    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+        </div>
+        <div>
+            <h4>Site</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">Patients</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="contact.html">1404 Raeford Road</a></li>
+                <li><a href="contact.html">Fayetteville, NC</a></li>
+                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Get Started</h4>
+            <ul>
+                <li><a href="contact.html">Request an Appointment</a></li>
+                <li><a href="faq.html">Insurance &amp; Billing</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
+        <!-- Image and font credits (Creative Commons / free-license sources) -->
+        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+    </div>
+</footer>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>
