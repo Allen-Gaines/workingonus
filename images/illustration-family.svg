@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" role="img" aria-labelledby="t d">
+  <title id="t">Family illustration</title>
+  <desc id="d">An original illustration of a family of four standing together under a rising sun, in Working On Us brand colors.</desc>
+  <!-- Background: soft cream card with a green hill and yellow sun -->
+  <rect width="600" height="440" rx="28" fill="#F3F7EC"/>
+  <circle cx="445" cy="150" r="88" fill="#FEBD13" opacity="0.9"/>
+  <circle cx="445" cy="150" r="118" fill="#FEBD13" opacity="0.18"/>
+  <path d="M0 330 C 140 270, 300 290, 600 250 L600 440 L0 440 Z" fill="#78AF31" opacity="0.35"/>
+  <path d="M0 360 C 180 320, 380 340, 600 300 L600 440 L0 440 Z" fill="#78AF31" opacity="0.55"/>
+  <!-- Leaves -->
+  <path d="M70 120 q 30 -40 70 -20 q -20 40 -70 20 z" fill="#78AF31" opacity="0.6"/>
+  <path d="M95 175 q 25 -30 60 -12 q -18 32 -60 12 z" fill="#4E7A1F" opacity="0.5"/>
+  <!-- Adult 1 (navy) -->
+  <circle cx="200" cy="168" r="30" fill="#4C270A"/>
+  <path d="M150 360 v-110 a50 50 0 0 1 100 0 v110 z" fill="#003BA5"/>
+  <!-- Adult 2 (green) -->
+  <circle cx="318" cy="160" r="30" fill="#7A4A22"/>
+  <path d="M268 360 v-115 a50 50 0 0 1 100 0 v115 z" fill="#4E7A1F"/>
+  <!-- Teen (yellow) -->
+  <circle cx="412" cy="222" r="24" fill="#4C270A"/>
+  <path d="M374 360 v-78 a38 38 0 0 1 76 0 v78 z" fill="#E9A800"/>
+  <!-- Child (light navy) -->
+  <circle cx="258" cy="262" r="19" fill="#7A4A22"/>
+  <path d="M228 360 v-50 a30 30 0 0 1 60 0 v50 z" fill="#2456B8"/>
+  <!-- Linked arms -->
+  <path d="M240 280 q 15 18 34 6" stroke="#FAF6EE" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M362 290 q 14 16 22 4" stroke="#FAF6EE" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Ground line -->
+  <rect x="120" y="358" width="360" height="6" rx="3" fill="#003BA5" opacity="0.25"/>
+</svg>

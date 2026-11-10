@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Questions — Working On Us</title>
-    <meta name="description" content="Answers to common questions about appointments, insurance, privacy, and telehealth at Working On Us.">
+    <title>New Patients &amp; FAQ — Working On Us</title>
+    <meta name="description" content="How to get started, what to bring, insurance accepted, and answers to common questions at Working On Us.">
 
-    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <!-- Google Fonts: Fraunces (headings) + Inter (body) — the site's only two fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <!-- Shared script: menus, modal, carousel, accordion, FAQ search, form validation, animations -->
     <script src="js/script.js" defer></script>
 </head>
 
@@ -32,13 +32,33 @@
     </button>
 
     <nav id="site-nav" aria-label="Main">
-        <ul>
+        <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="faq.html">Patients</a></li>
-            <li><a href="about.html">About</a></li>
+            <!-- Dropdown: the link goes to the main page, the ▾ button opens the submenu -->
+            <li class="has-dropdown">
+                <a href="services.html">Services</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-services" aria-label="Services submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-services">
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="medication-management.html">Medication Management</a></li>
+                    <li><a href="programs.html">Specialized Programs</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">New Patients</a></li>
+            <li class="has-dropdown">
+                <a href="about.html">About</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-about" aria-label="About submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-about">
+                    <li><a href="about.html">Our Mission &amp; Story</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </li>
             <li><a href="contact.html">Contact</a></li>
-            <!-- Pill-style button that opens the demo patient portal -->
+            <!-- Pill-style button that opens the patient portal -->
             <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
         </ul>
     </nav>
@@ -48,133 +68,182 @@
 <!-- Page banner: navy band with breadcrumb, page title and intro -->
 <section class="page-hero">
     <div class="page-hero-inner">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Patients</nav>
-        <p class="eyebrow">Patients</p>
-        <h1>Patient questions</h1>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> New Patients</nav>
+        <p class="eyebrow">New Patients</p>
+        <h1>New patients &amp; questions</h1>
         <p>Everything you might want to know before your first visit — and a few things that come up along the way.</p>
     </div>
 </section>
 
-<!-- Full patient FAQ: search box + same accordion pattern as the homepage -->
-<section class="Patients">
+<!-- Getting started -->
+<section class="page-wrap two-col reveal">
+    <div>
+        <h2 class="services-heading">Getting started is simple</h2>
+        <p class="lead-text">Our staff verify your insurance, walk you through intake, and schedule your psychiatric evaluation. Just call or request an appointment.</p>
+        <div class="cta-actions"><a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Book an Appointment</a><a href="tel:+19102572815" class="btn btn-outline-navy">Call (910) 257-2815</a></div>
+    </div>
+    <div class="bring-box">
+        <h3>What to bring</h3>
+        <ul class="check-list">
+            <li>Photo ID and insurance card</li>
+            <li>A list of current medications and doses</li>
+            <li>Past psychiatric or hospital records, if you have them</li>
+            <li>A family member or caregiver, if you'd like</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Insurance -->
+<section class="page-wrap reveal" id="insurance">
+    <h2 class="services-heading">Insurance accepted</h2>
+    <p>We're in-network with these plans. Don't see yours? <a href="tel:+19102572815" class="patient_link">Call us</a> and we'll check.</p>
+    <ul class="insurance-list large">
+        <li>Aetna</li>        <li>Cigna</li>        <li>Carelon Behavioral Health</li>        <li>Blue Cross Blue Shield of North Carolina</li>        <li>Independence Blue Cross (PA)</li>        <li>Horizon BCBS of New Jersey</li>        <li>Curative</li>
+    </ul>
+</section>
+
+<!-- Full FAQ: search box + accordion -->
+<section class="Patients" id="faq">
+    <h2 class="patients-heading">Frequently asked questions</h2>
     <!-- Live search: script.js hides questions that don't match what's typed -->
     <div class="faq-search">
         <label for="faq-filter">Search questions</label>
         <input type="search" id="faq-filter" placeholder="Try “insurance” or “telehealth”" autocomplete="off">
         <p id="faq-count" class="faq-count" aria-live="polite"></p>
     </div>
-
-    <!-- Each .patient-card = one question button + its collapsible .answer -->
     <div class="patient-card reveal">
         <button class="question-btn">What happens during my first appointment?</button>
-        <p class="answer">Your first visit is about getting to know you, not diagnosing you. We'll talk through what brought you in, your history, and what support looks like for your life right now.</p>
+        <p class="answer">Your first visit is a psychiatric evaluation. Your provider reviews your symptoms, concerns, and any relevant lab results, talks through medication options with you, and builds a personalized treatment plan.</p>
     </div>
-
     <div class="patient-card reveal">
         <button class="question-btn">Do you accept insurance?</button>
-        <p class="answer">We work with a range of insurance providers and offer guidance on payment options. Reach out to our office and we'll help you figure out what's covered.</p>
+        <p class="answer">Yes. We're in-network with Aetna, Cigna, Carelon Behavioral Health, Blue Cross Blue Shield of North Carolina, Independence Blue Cross (PA), Horizon BCBS of New Jersey, and Curative. Don't see your plan? Call (910) 257-2815 and we'll check for you.</p>
     </div>
-
     <div class="patient-card reveal">
-        <button class="question-btn">Is what I share confidential?</button>
-        <p class="answer">Yes. Your privacy is protected under federal law. For family and teen clients, we'll walk through together what's shared and what stays between us.</p>
+        <button class="question-btn">Do I have to stop seeing my therapist?</button>
+        <p class="answer">No. You can keep your current therapist while you receive psychiatric care here. With your permission, we coordinate with your therapist so your care stays connected.</p>
     </div>
-
-    <div class="patient-card reveal">
-        <button class="question-btn">How do I know if I need therapy, medication management, or both?</button>
-        <p class="answer">That's exactly what your first appointment helps figure out. Many families find a combination works best, and we'll build a plan around what fits you.</p>
-    </div>
-
-    <div class="patient-card reveal">
-        <button class="question-btn">How often will I need to come in?</button>
-        <p class="answer">It varies by person and goal. Some start weekly and taper down over time, others check in monthly. We'll set a schedule that works for you.</p>
-    </div>
-
-    <div class="patient-card reveal">
-        <button class="question-btn">What ages do you work with?</button>
-        <p class="answer">We serve children, teens, adults, and whole families. Several of our programs are designed specifically for families to attend together.</p>
-    </div>
-
-    <div class="patient-card reveal">
-        <button class="question-btn">How long is a typical session?</button>
-        <p class="answer">Most individual and family sessions run about 50 minutes. Medication management check-ins are usually shorter, and your first appointment may run a little longer so we have time to get to know you.</p>
-    </div>
-
     <div class="patient-card reveal">
         <button class="question-btn">Do you offer telehealth appointments?</button>
-        <p class="answer">Yes — many of our services are available virtually for clients across North Carolina. We'll help you decide whether in-person, telehealth, or a mix makes the most sense for you.</p>
+        <p class="answer">Yes. We see patients in person in Fayetteville and by telehealth across North Carolina.</p>
     </div>
-
     <div class="patient-card reveal">
         <button class="question-btn">What should I bring to my first visit?</button>
-        <p class="answer">A photo ID, your insurance card if you have one, and a list of any current medications. If another provider referred you, any records you have are helpful but not required.</p>
+        <p class="answer">A photo ID and your insurance card, a list of current medications and doses, and any past psychiatric or hospital records you have. You're welcome to bring a family member or caregiver.</p>
     </div>
-
+    <div class="patient-card reveal">
+        <button class="question-btn">Can my family be involved in my care?</button>
+        <p class="answer">Yes, with your permission. We help loved ones understand your treatment and how to support your progress. Our Family Medication Support program is built for exactly this.</p>
+    </div>
+    <div class="patient-card reveal">
+        <button class="question-btn">How do I get started?</button>
+        <p class="answer">Call (910) 257-2815 or book online. Our staff will verify your insurance, walk you through intake, and schedule your psychiatric evaluation.</p>
+    </div>
+    <div class="patient-card reveal">
+        <button class="question-btn">Can another provider refer me?</button>
+        <p class="answer">Yes. Therapists and other providers can call our office at (910) 257-2815 to refer a patient. Medication management referrals don't require the patient to transfer their therapy.</p>
+    </div>
+    <div class="patient-card reveal">
+        <button class="question-btn">Is what I share confidential?</button>
+        <p class="answer">Yes. Your health information is protected under federal privacy law (HIPAA). See our <a href="privacy.html#hipaa" class="patient_link">Privacy &amp; HIPAA page</a> for your rights.</p>
+    </div>
     <div class="patient-card reveal">
         <button class="question-btn">What if I need to cancel or reschedule?</button>
-        <p class="answer">Life happens — just give our office a call as soon as you can, ideally 24 hours ahead, and we'll find a time that works better for you.</p>
+        <p class="answer">Please call our office as soon as you can, and we'll help you find a time that works better.</p>
     </div>
-
     <div class="patient-card reveal">
         <button class="question-btn">What if I'm in crisis right now?</button>
         <p class="answer">If you or someone you love is in immediate danger, call 911. For mental health crisis support, call or text 988 (the Suicide &amp; Crisis Lifeline) any time, day or night. Then reach out to us — we'll help with the next step.</p>
     </div>
 
     <!-- Shown by script.js when the search matches nothing -->
-    <p id="faq-empty" class="faq-empty" hidden>No questions match that search. <a href="contact.html" class="patient_link">Ask us directly →</a></p>
-
-    <div class="patient-more">
-        <a href="contact.html" class="patient_link">Still have questions? Contact us →</a>
-    </div>
+    <p id="faq-empty" class="faq-empty" hidden>No questions match that search. <a href="contact.html#message" class="patient_link">Ask us directly →</a></p>
 </section>
 
 <!-- Call-to-action banner above the footer -->
 <section class="cta-strip reveal">
-    <h2>Ready to take the next step?</h2>
-    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+    <div>
+        <h2>Ready to talk about your treatment options?</h2>
+        <p>New patients are welcome, and your insurance may already cover your care.</p>
+    </div>
+    <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Book an Appointment</a>
+        <a href="tel:+19102572815" class="btn btn-outline-navy">Call (910) 257-2815</a>
+    </div>
 </section>
 </main>
 
-<!-- Site footer: logo, site links, contact info, credits -->
+<!-- Site footer: logo, site links, services, contact info, credits -->
 <footer>
     <div class="footer-grid">
         <div>
             <div class="footer-logo">Working On Us</div>
-            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+            <p class="footer-tagline">Psychiatric medication management and family-centered behavioral health across North Carolina.</p>
+            <p class="footer-crisis">In a crisis, call or text <a href="tel:988">988</a> or dial <a href="tel:911">911</a>.</p>
         </div>
         <div>
-            <h4>Site</h4>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="medication-management.html">Medication Management</a></li>
+                <li><a href="services.html#psychiatric-evaluations">Psychiatric Evaluations</a></li>
+                <li><a href="programs.html">Specialized Programs</a></li>
+                <li><a href="faq.html#insurance">Insurance Accepted</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="faq.html">Patients</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">New Patients</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
             </ul>
         </div>
         <div>
             <h4>Contact</h4>
             <ul>
-                <li><a href="contact.html">1404 Raeford Road</a></li>
-                <li><a href="contact.html">Fayetteville, NC</a></li>
-                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4>Get Started</h4>
-            <ul>
-                <li><a href="contact.html">Request an Appointment</a></li>
-                <li><a href="faq.html">Insurance &amp; Billing</a></li>
-                <li><a href="portal.html">Patient Portal (demo)</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1404+Raeford+Road+Fayetteville+NC+28305" target="_blank" rel="noopener">1404 Raeford Road<br>Fayetteville, NC 28305</a></li>
+                <li><a href="tel:+19102572815">Phone: (910) 257-2815</a></li>
+                <li><span class="footer-text">Fax: (949) 890-4215</span></li>
+                <li><a href="mailto:info@workingonus.org">info@workingonus.org</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
-        <!-- Image and font credits (Creative Commons / free-license sources) -->
-        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services · <a href="privacy.html">Privacy, HIPAA &amp; Accessibility</a></span>
+        <!-- Credits: content source, original artwork, fonts (copyright requirement) -->
+        <span>Content adapted from the practice's site, <a href="https://workingonus.org" target="_blank" rel="noopener">workingonus.org</a>. Illustrations are original artwork by Allen Gaines. Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License).</span>
     </div>
 </footer>
+
+<!-- "Book an appointment" pop-up (modal). Any element with data-open-modal="book-modal"
+     opens it; script.js handles focus, the Escape key, and clicking outside to close. -->
+<div class="modal" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <p class="eyebrow">Now accepting new patients</p>
+        <h2 id="book-modal-title">Book an appointment</h2>
+        <p class="modal-intro">Choose whatever is easiest for you. We'll verify your insurance and help schedule your psychiatric evaluation.</p>
+        <div class="modal-options">
+            <a class="modal-option" href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_116624" target="_blank" rel="noopener">
+                <span class="modal-icon" aria-hidden="true">📅</span>
+                <span><strong>Book online</strong>Pick a time on the practice's secure scheduling page (opens in a new tab).</span>
+            </a>
+            <a class="modal-option" href="tel:+19102572815">
+                <span class="modal-icon" aria-hidden="true">📞</span>
+                <span><strong>Call (910) 257-2815</strong>Talk with our office about insurance and your first visit.</span>
+            </a>
+            <a class="modal-option" href="contact.html#message">
+                <span class="modal-icon" aria-hidden="true">✉️</span>
+                <span><strong>Send a message</strong>Ask a question first. We'll get back to you.</span>
+            </a>
+        </div>
+        <p class="modal-note">In a crisis, call or text <strong>988</strong> or dial <strong>911</strong>.</p>
+    </div>
+</div>
 
 <!-- Back-to-top button: script.js shows it after you scroll down -->
 <button class="to-top" aria-label="Back to top">↑</button>

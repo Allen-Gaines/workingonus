@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Management — Working On Us</title>
+    <meta name="description" content="Psychiatric evaluations and ongoing medication management in Fayetteville, NC and by telehealth across North Carolina.">
+
+    <!-- Google Fonts: Fraunces (headings) + Inter (body) — the site's only two fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: menus, modal, carousel, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <!-- Dropdown: the link goes to the main page, the ▾ button opens the submenu -->
+            <li class="has-dropdown">
+                <a href="services.html">Services</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-services" aria-label="Services submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-services">
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="medication-management.html">Medication Management</a></li>
+                    <li><a href="programs.html">Specialized Programs</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">New Patients</a></li>
+            <li class="has-dropdown">
+                <a href="about.html">About</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-about" aria-label="About submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-about">
+                    <li><a href="about.html">Our Mission &amp; Story</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Page banner: navy band with breadcrumb, page title and intro -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <a href="services.html">Services</a> <span aria-hidden="true">/</span> Medication Management</nav>
+        <p class="eyebrow">Medication Management</p>
+        <h1>Psychiatric medication management</h1>
+        <p>Medication can be one helpful part of feeling more like yourself. We help you understand your options, start carefully, and adjust as you go.</p>
+    </div>
+</section>
+
+<!-- What it is -->
+<section class="page-wrap two-col reveal">
+    <div>
+        <h2 class="services-heading">What medication management means here</h2>
+        <p class="lead-text">Medication management is ongoing psychiatric care. It begins with a psychiatric evaluation and continues with regular follow-ups, so your treatment keeps up with how you're actually doing.</p>
+        <p>We work with people experiencing trauma, anxiety, depression, ADHD, and other mental health concerns. You'll always know why a medication is being recommended, what to watch for, and what happens next.</p>
+        <ul class="check-list">
+            <li>In person in Fayetteville or by telehealth across North Carolina</li>
+            <li>Keep your current therapist — we coordinate with them, with your permission</li>
+            <li>Family members can be involved, if you'd like</li>
+        </ul>
+    </div>
+    <img src="images/illustration-care.svg" alt="Illustration of a provider and a patient talking" width="600" height="440" class="rounded-art">
+</section>
+
+<!-- How it works: numbered steps -->
+<section class="steps">
+    <div class="steps-inner">
+        <p class="eyebrow">How it works</p>
+        <h2>From first visit to ongoing care</h2>
+        <ol class="steps-list steps-4">
+            <li class="step reveal">
+                <h3>Psychiatric evaluation</h3>
+                <p>Your provider reviews your symptoms, concerns, history, and relevant lab results.</p>
+            </li>
+            <li class="step reveal">
+                <h3>Your plan</h3>
+                <p>Together you discuss options — including whether medication may help — and build a personalized plan.</p>
+            </li>
+            <li class="step reveal">
+                <h3>Follow-up visits</h3>
+                <p>Regular check-ins track how well treatment is working and any side effects.</p>
+            </li>
+            <li class="step reveal">
+                <h3>Adjust as needed</h3>
+                <p>Your plan changes as your needs change, so care keeps fitting your life.</p>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- Family + therapy coordination -->
+<section class="split-band reveal">
+    <article class="split-card">
+        <h2>Supporting the people around you</h2>
+        <p>With your permission, we help loved ones understand your treatment and how to support your progress. Our Family Medication Support program covers what to expect, side effects, warning signs, and crisis planning.</p>
+        <a href="programs.html#family-medication-support" class="link">Family Medication Support →</a>
+    </article>
+    <article class="split-card">
+        <h2>Already have a therapist?</h2>
+        <p>Great — keep them. Medication management here doesn't require transferring therapy. With your permission, we'll share updates so your care stays connected.</p>
+        <a href="services.html#care-coordination" class="link">Care coordination →</a>
+    </article>
+</section>
+
+<!-- What to bring -->
+<section class="page-wrap reveal">
+    <div class="bring-box">
+        <h2 class="services-heading">What to bring to your evaluation</h2>
+        <ul class="check-list">
+            <li>Photo ID and insurance card</li>
+            <li>A list of current medications and doses</li>
+            <li>Past psychiatric or hospital records, if you have them</li>
+            <li>A family member or caregiver, if you'd like</li>
+        </ul>
+    </div>
+</section>
+
+<!-- In-network insurance plans (from workingonus.org) -->
+<section class="insurance-strip" aria-labelledby="insurance-title">
+    <p class="insurance-label" id="insurance-title"><span aria-hidden="true">✅</span> In-network with:</p>
+    <ul class="insurance-list">
+        <li>Aetna</li>
+        <li>Cigna</li>
+        <li>Carelon Behavioral Health</li>
+        <li>Blue Cross Blue Shield of North Carolina</li>
+        <li>Independence Blue Cross (PA)</li>
+        <li>Horizon BCBS of New Jersey</li>
+        <li>Curative</li>
+    </ul>
+    <a href="tel:+19102572815" class="insurance-call">Don't see yours? Call us →</a>
+</section>
+
+
+<!-- Call-to-action banner above the footer -->
+<section class="cta-strip reveal">
+    <div>
+        <h2>Ready to talk about your treatment options?</h2>
+        <p>New patients are welcome, and your insurance may already cover your care.</p>
+    </div>
+    <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Book an Appointment</a>
+        <a href="tel:+19102572815" class="btn btn-outline-navy">Call (910) 257-2815</a>
+    </div>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, services, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Psychiatric medication management and family-centered behavioral health across North Carolina.</p>
+            <p class="footer-crisis">In a crisis, call or text <a href="tel:988">988</a> or dial <a href="tel:911">911</a>.</p>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="medication-management.html">Medication Management</a></li>
+                <li><a href="services.html#psychiatric-evaluations">Psychiatric Evaluations</a></li>
+                <li><a href="programs.html">Specialized Programs</a></li>
+                <li><a href="faq.html#insurance">Insurance Accepted</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">New Patients</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1404+Raeford+Road+Fayetteville+NC+28305" target="_blank" rel="noopener">1404 Raeford Road<br>Fayetteville, NC 28305</a></li>
+                <li><a href="tel:+19102572815">Phone: (910) 257-2815</a></li>
+                <li><span class="footer-text">Fax: (949) 890-4215</span></li>
+                <li><a href="mailto:info@workingonus.org">info@workingonus.org</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services · <a href="privacy.html">Privacy, HIPAA &amp; Accessibility</a></span>
+        <!-- Credits: content source, original artwork, fonts (copyright requirement) -->
+        <span>Content adapted from the practice's site, <a href="https://workingonus.org" target="_blank" rel="noopener">workingonus.org</a>. Illustrations are original artwork by Allen Gaines. Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License).</span>
+    </div>
+</footer>
+
+<!-- "Book an appointment" pop-up (modal). Any element with data-open-modal="book-modal"
+     opens it; script.js handles focus, the Escape key, and clicking outside to close. -->
+<div class="modal" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <p class="eyebrow">Now accepting new patients</p>
+        <h2 id="book-modal-title">Book an appointment</h2>
+        <p class="modal-intro">Choose whatever is easiest for you. We'll verify your insurance and help schedule your psychiatric evaluation.</p>
+        <div class="modal-options">
+            <a class="modal-option" href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_116624" target="_blank" rel="noopener">
+                <span class="modal-icon" aria-hidden="true">📅</span>
+                <span><strong>Book online</strong>Pick a time on the practice's secure scheduling page (opens in a new tab).</span>
+            </a>
+            <a class="modal-option" href="tel:+19102572815">
+                <span class="modal-icon" aria-hidden="true">📞</span>
+                <span><strong>Call (910) 257-2815</strong>Talk with our office about insurance and your first visit.</span>
+            </a>
+            <a class="modal-option" href="contact.html#message">
+                <span class="modal-icon" aria-hidden="true">✉️</span>
+                <span><strong>Send a message</strong>Ask a question first. We'll get back to you.</span>
+            </a>
+        </div>
+        <p class="modal-note">In a crisis, call or text <strong>988</strong> or dial <strong>911</strong>.</p>
+    </div>
+</div>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

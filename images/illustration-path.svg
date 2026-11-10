@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" role="img" aria-labelledby="t d">
+  <title id="t">New chapter illustration</title>
+  <desc id="d">An original illustration of a winding path leading through an open doorway toward a sunrise, representing life transitions.</desc>
+  <rect width="600" height="440" rx="28" fill="#FFF6DD"/>
+  <!-- Sky glow -->
+  <circle cx="300" cy="190" r="150" fill="#FEBD13" opacity="0.18"/>
+  <!-- Doorway frame -->
+  <rect x="215" y="70" width="170" height="250" rx="14" fill="#003BA5"/>
+  <rect x="232" y="88" width="136" height="232" rx="8" fill="#FFE7A3"/>
+  <circle cx="300" cy="230" r="48" fill="#FEBD13"/>
+  <path d="M232 280 q 34 -40 68 -14 q 34 -26 68 14 v 40 h -136 z" fill="#78AF31" opacity="0.7"/>
+  <!-- Open door -->
+  <path d="M368 88 l 70 22 v 226 l -70 -16 z" fill="#2456B8"/>
+  <circle cx="420" cy="214" r="5" fill="#FEBD13"/>
+  <!-- Path -->
+  <path d="M300 320 C 270 350, 340 370, 280 400 C 250 415, 230 430, 220 440 L 380 440 C 370 425, 350 410, 360 395 C 400 365, 320 345, 300 320 Z" fill="#4C270A" opacity="0.25"/>
+  <!-- Ground -->
+  <path d="M0 330 C 150 310, 450 310, 600 330 L600 440 L0 440 Z" fill="#78AF31" opacity="0.45"/>
+  <path d="M300 322 C 275 350, 335 372, 282 402 C 258 416, 240 430, 232 440 L 368 440 C 360 428, 344 414, 352 398 C 390 368, 318 346, 300 322 Z" fill="#E9D8BE"/>
+  <!-- Walker -->
+  <circle cx="270" cy="352" r="12" fill="#4C270A"/>
+  <path d="M254 404 v-30 a16 16 0 0 1 32 0 v30 z" fill="#4E7A1F"/>
+  <!-- Stepping-stones / leaves -->
+  <path d="M90 300 q 26 -36 62 -18 q -18 34 -62 18 z" fill="#4E7A1F" opacity="0.6"/>
+  <path d="M470 290 q 26 -34 60 -16 q -16 32 -60 16 z" fill="#78AF31" opacity="0.7"/>
+  <!-- Birds -->
+  <path d="M120 120 q 10 -10 20 0 q 10 -10 20 0" stroke="#003BA5" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M470 80 q 8 -8 16 0 q 8 -8 16 0" stroke="#003BA5" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

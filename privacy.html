@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy, HIPAA &amp; Accessibility — Working On Us</title>
+    <meta name="description" content="Website privacy summary, HIPAA patient rights, and accessibility features of the Working On Us website.">
+
+    <!-- Google Fonts: Fraunces (headings) + Inter (body) — the site's only two fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: menus, modal, carousel, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <!-- Dropdown: the link goes to the main page, the ▾ button opens the submenu -->
+            <li class="has-dropdown">
+                <a href="services.html">Services</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-services" aria-label="Services submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-services">
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="medication-management.html">Medication Management</a></li>
+                    <li><a href="programs.html">Specialized Programs</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">New Patients</a></li>
+            <li class="has-dropdown">
+                <a href="about.html">About</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-about" aria-label="About submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-about">
+                    <li><a href="about.html">Our Mission &amp; Story</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Page banner: navy band with breadcrumb, page title and intro -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Privacy, HIPAA &amp; Accessibility</nav>
+        <p class="eyebrow">Privacy</p>
+        <h1>Privacy, HIPAA &amp; accessibility</h1>
+        <p>How this website handles information, your rights as a patient, and how we've made the site usable for everyone.</p>
+    </div>
+</section>
+
+<!-- Table of contents -->
+<nav class="program-strip" aria-label="On this page">
+    <a href="#website-privacy" class="program-jump">🔒 Website privacy</a>
+    <a href="#hipaa" class="program-jump">🩺 HIPAA &amp; your health information</a>
+    <a href="#accessibility" class="program-jump">♿ Accessibility</a>
+    <a href="#portal-demo" class="program-jump">💻 About the portal demo</a>
+</nav>
+
+<article class="page-wrap legal">
+    <section id="website-privacy" class="reveal">
+        <h2 class="services-heading">Website privacy</h2>
+        <p>The practice's full website privacy notice (last updated October 15, 2026) is published at <a href="https://workingonus.org/privacy" target="_blank" rel="noopener" class="patient_link">workingonus.org/privacy</a>. In short:</p>
+        <ul class="check-list">
+            <li><strong>What may be collected:</strong> information you send (like contact details and messages), and information collected automatically, such as device type, pages viewed, and cookies.</li>
+            <li><strong>How it's used:</strong> to run and improve the website, respond to you, and meet legal requirements.</li>
+            <li><strong>Your choices:</strong> unsubscribe from marketing emails using the link in them, and manage cookies in your browser settings.</li>
+            <li><strong>Children:</strong> the site isn't directed at children under 13.</li>
+            <li><strong>Questions:</strong> email <a href="mailto:info@workingonus.org" class="patient_link">info@workingonus.org</a>.</li>
+        </ul>
+        <p class="small-note">The official notice above is the one that applies. This page is a plain-language summary.</p>
+    </section>
+
+    <section id="hipaa" class="reveal">
+        <h2 class="services-heading">HIPAA &amp; your health information</h2>
+        <p>As a healthcare provider, the practice must protect your health information under the federal HIPAA Privacy Rule. Under HIPAA, you generally have the right to:</p>
+        <ul class="check-list">
+            <li>See and get a copy of your health records</li>
+            <li>Ask for corrections to your health information</li>
+            <li>Get a notice explaining how your health information may be used and shared</li>
+            <li>Ask that your information not be shared in certain ways</li>
+            <li>Ask to be contacted in a way that keeps your information private (for example, a different phone number)</li>
+            <li>File a complaint if you believe your rights were violated</li>
+        </ul>
+        <p>Ask our office for a copy of the practice's Notice of Privacy Practices. You can learn more about your rights from the U.S. Department of Health &amp; Human Services at <a href="https://www.hhs.gov/hipaa/for-individuals/index.html" target="_blank" rel="noopener" class="patient_link">hhs.gov/hipaa</a>.</p>
+        <p class="small-note">Please don't send health details through this website's contact form or email. Call the office instead.</p>
+    </section>
+
+    <section id="accessibility" class="reveal">
+        <h2 class="services-heading">Accessibility</h2>
+        <p>This website was built so everyone can use it, including people who use a keyboard, a screen reader, or zoom. It includes:</p>
+        <ul class="check-list">
+            <li>A "Skip to main content" link and full keyboard navigation, with a visible focus outline</li>
+            <li>Meaningful page structure (one main heading per page, landmarks, labeled forms)</li>
+            <li>Text alternatives for images, and decorative graphics hidden from screen readers</li>
+            <li>Color combinations chosen for readable contrast</li>
+            <li>Animations that turn off when your device asks for reduced motion</li>
+            <li>Layouts that adjust to phones, tablets, and desktops</li>
+        </ul>
+        <p>Having trouble using any part of the site? Call <a href="tel:+19102572815" class="patient_link">(910) 257-2815</a> or email <a href="mailto:info@workingonus.org" class="patient_link">info@workingonus.org</a> and we'll help.</p>
+    </section>
+
+    <section id="portal-demo" class="reveal">
+        <h2 class="services-heading">About the patient portal demo</h2>
+        <p>The Patient Portal on this site is a <strong>student class project demo</strong> that uses made-up sample data. It is not the practice's official portal and must not be used for real health information. A real patient portal requires HIPAA-compliant hosting with a signed Business Associate Agreement (BAA). Current patients should call the office for access to the official portal.</p>
+    </section>
+</article>
+
+<!-- Call-to-action banner above the footer -->
+<section class="cta-strip reveal">
+    <div>
+        <h2>Ready to talk about your treatment options?</h2>
+        <p>New patients are welcome, and your insurance may already cover your care.</p>
+    </div>
+    <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Book an Appointment</a>
+        <a href="tel:+19102572815" class="btn btn-outline-navy">Call (910) 257-2815</a>
+    </div>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, services, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Psychiatric medication management and family-centered behavioral health across North Carolina.</p>
+            <p class="footer-crisis">In a crisis, call or text <a href="tel:988">988</a> or dial <a href="tel:911">911</a>.</p>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="medication-management.html">Medication Management</a></li>
+                <li><a href="services.html#psychiatric-evaluations">Psychiatric Evaluations</a></li>
+                <li><a href="programs.html">Specialized Programs</a></li>
+                <li><a href="faq.html#insurance">Insurance Accepted</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">New Patients</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1404+Raeford+Road+Fayetteville+NC+28305" target="_blank" rel="noopener">1404 Raeford Road<br>Fayetteville, NC 28305</a></li>
+                <li><a href="tel:+19102572815">Phone: (910) 257-2815</a></li>
+                <li><span class="footer-text">Fax: (949) 890-4215</span></li>
+                <li><a href="mailto:info@workingonus.org">info@workingonus.org</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services · <a href="privacy.html">Privacy, HIPAA &amp; Accessibility</a></span>
+        <!-- Credits: content source, original artwork, fonts (copyright requirement) -->
+        <span>Content adapted from the practice's site, <a href="https://workingonus.org" target="_blank" rel="noopener">workingonus.org</a>. Illustrations are original artwork by Allen Gaines. Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License).</span>
+    </div>
+</footer>
+
+<!-- "Book an appointment" pop-up (modal). Any element with data-open-modal="book-modal"
+     opens it; script.js handles focus, the Escape key, and clicking outside to close. -->
+<div class="modal" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <p class="eyebrow">Now accepting new patients</p>
+        <h2 id="book-modal-title">Book an appointment</h2>
+        <p class="modal-intro">Choose whatever is easiest for you. We'll verify your insurance and help schedule your psychiatric evaluation.</p>
+        <div class="modal-options">
+            <a class="modal-option" href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_116624" target="_blank" rel="noopener">
+                <span class="modal-icon" aria-hidden="true">📅</span>
+                <span><strong>Book online</strong>Pick a time on the practice's secure scheduling page (opens in a new tab).</span>
+            </a>
+            <a class="modal-option" href="tel:+19102572815">
+                <span class="modal-icon" aria-hidden="true">📞</span>
+                <span><strong>Call (910) 257-2815</strong>Talk with our office about insurance and your first visit.</span>
+            </a>
+            <a class="modal-option" href="contact.html#message">
+                <span class="modal-icon" aria-hidden="true">✉️</span>
+                <span><strong>Send a message</strong>Ask a question first. We'll get back to you.</span>
+            </a>
+        </div>
+        <p class="modal-note">In a crisis, call or text <strong>988</strong> or dial <strong>911</strong>.</p>
+    </div>
+</div>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

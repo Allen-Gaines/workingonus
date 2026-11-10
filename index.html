@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Working On Us — Behavioral Health &amp; Family Services</title>
-    <meta name="description" content="Medication management, therapy, and family services in Fayetteville, NC.">
+    <title>Working On Us — Psychiatric Medication Management &amp; Family Services | Fayetteville, NC</title>
+    <meta name="description" content="Psychiatric evaluations, medication management, and family-centered behavioral health in Fayetteville, NC and by telehealth across North Carolina.">
 
-    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <!-- Google Fonts: Fraunces (headings) + Inter (body) — the site's only two fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <!-- Shared script: menus, modal, carousel, accordion, FAQ search, form validation, animations -->
     <script src="js/script.js" defer></script>
 </head>
 
@@ -32,173 +32,276 @@
     </button>
 
     <nav id="site-nav" aria-label="Main">
-        <ul>
+        <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="faq.html">Patients</a></li>
-            <li><a href="about.html">About</a></li>
+            <!-- Dropdown: the link goes to the main page, the ▾ button opens the submenu -->
+            <li class="has-dropdown">
+                <a href="services.html">Services</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-services" aria-label="Services submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-services">
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="medication-management.html">Medication Management</a></li>
+                    <li><a href="programs.html">Specialized Programs</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">New Patients</a></li>
+            <li class="has-dropdown">
+                <a href="about.html">About</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-about" aria-label="About submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-about">
+                    <li><a href="about.html">Our Mission &amp; Story</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </li>
             <li><a href="contact.html">Contact</a></li>
-            <!-- Pill-style button that opens the demo patient portal -->
+            <!-- Pill-style button that opens the patient portal -->
             <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
         </ul>
     </nav>
 </header>
 
 <main id="main" tabindex="-1">
-<!-- Hero: headline, intro copy, CTA buttons, and a highlighted card -->
+<!-- Hero: practice focus, headline, intro, CTAs, and a highlighted card -->
 <section class="hero">
     <div class="hero-grid">
         <div class="hero-text">
-            <h1>Healing Families. Building Futures.</h1>
-            <p>Life is a series of chapters, and navigating them shouldn't be done alone. Whether "us" means the relationship between your mind and body, you and your family, or your past and your future—we are here to help you do the work.</p>
-            <p>Working On Us provides compassionate behavioral health and family services to individuals and families across North Carolina — helping you take the next step toward healing and hope.</p>
-            <!-- Primary/secondary CTAs -->
+            <div class="hero-badges">
+                <span class="badge">● Now Accepting New Patients</span>
+                <span class="badge">✓ Insurance Accepted</span>
+            </div>
+            <p class="eyebrow">Psychiatric Care &amp; Medication Management</p>
+            <h1>Let's work on feeling more like you.</h1>
+            <p>You should feel heard and understand your care. Our providers take time to explore your symptoms, talk through medication options, and build a plan that fits your life — in person in Fayetteville or by telehealth across North Carolina.</p>
+            <p class="hero-tagline">Working on your well-being. Together.</p>
+            <!-- Primary/secondary CTAs: Book opens the booking pop-up -->
             <div class="hero-actions">
-                <a href="services.html" class="btn btn-primary">Explore Our Programs</a>
-                <a href="contact.html" class="btn btn-outline">Contact Us Today</a>
+                <a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Book an Appointment</a>
+                <a href="tel:+19102572815" class="btn btn-outline">Refer a Patient</a>
             </div>
         </div>
         <!-- Callout card highlighting the practice's primary service -->
         <aside class="hero-card">
             <span class="chip">Featured service</span>
             <h3>Medication Management</h3>
-            <p>Ongoing psychiatric care that keeps your treatment plan on track and reviewed regularly.</p>
-            <a href="services.html#medication-management" class="link">Learn how it works →</a>
+            <p>Explore medication options with ongoing follow-up on how well it's working, side effects, and your changing needs.</p>
+            <a href="medication-management.html" class="link">Learn how it works →</a>
         </aside>
     </div>
 </section>
 
-<!-- Quick-facts strip under the hero: location, who we serve, phone -->
-<section class="info-strip" aria-label="Practice information">
-    <div class="info-item"><span class="info-icon" aria-hidden="true">📍</span>1404 Raeford Road, Fayetteville</div>
-    <div class="info-item"><span class="info-icon" aria-hidden="true">👨‍👩‍👧</span>Individuals &amp; families across NC</div>
-    <div class="info-item"><span class="info-icon" aria-hidden="true">📞</span><a href="tel:+19102572815">(910) 257-2815</a></div>
+<!-- In-network insurance plans (from workingonus.org) -->
+<section class="insurance-strip" aria-labelledby="insurance-title">
+    <p class="insurance-label" id="insurance-title"><span aria-hidden="true">✅</span> In-network with:</p>
+    <ul class="insurance-list">
+        <li>Aetna</li>
+        <li>Cigna</li>
+        <li>Carelon Behavioral Health</li>
+        <li>Blue Cross Blue Shield of North Carolina</li>
+        <li>Independence Blue Cross (PA)</li>
+        <li>Horizon BCBS of New Jersey</li>
+        <li>Curative</li>
+    </ul>
+    <a href="tel:+19102572815" class="insurance-call">Don't see yours? Call us →</a>
 </section>
 
-<!-- Welcome / intro section: mission statement + supporting image -->
-<section class="welcome reveal">
-    <div class="welcome-text">
-        <p class="eyebrow">Welcome</p>
-        <h2 class="welcome-heading">A place where families find strength</h2>
-        <p>At Working On Us Behavioral Health &amp; Family Services, we believe every family deserves the support, tools, and compassion needed to thrive. Our team of dedicated professionals walks alongside individuals and families — meeting you where you are and guiding you toward lasting change.</p>
-        <p>From behavioral health counseling to family preservation and community support, our programs are designed with one goal in mind: your well-being and the well-being of your family.</p>
-    </div>
-
-    <div class="welcome-image">
-        <img src="images/pexels-rodnae-productions-7820039.jpg" alt="A family talking together during a counseling session">
-    </div>
-</section>
-
-<!-- Services preview: medication management listed first as the primary service.
-     Each "Learn more" jumps to that service's section on services.html -->
+<!-- Core services (from workingonus.org): care that considers your whole life -->
 <section class="services">
-    <p class="eyebrow">Services</p>
-    <h2 class="services-heading">Our Services</h2>
-    <p>Every family's needs look different. Here's where most people start.</p>
+    <p class="eyebrow">Our Services</p>
+    <h2 class="services-heading">Care that considers your whole life.</h2>
+    <p>Care starts with understanding your experiences and goals. We consider whether medication may help, monitor how you respond, and adjust treatment — while also looking at your relationships, routines, and community support.</p>
 
-    <!-- 4-up grid of service cards (each card is a self-contained <article>) -->
-    <div class="service-grid">
-
+    <div class="service-grid service-grid-3">
+        <article class="service-card reveal">
+            <div class="service-icon">🩺</div>
+            <h3>Psychiatric Evaluations</h3>
+            <p>A thorough review of your symptoms, concerns, and relevant lab results to build your treatment plan.</p>
+            <a href="services.html#psychiatric-evaluations" class="link">Learn more →</a>
+        </article>
         <article class="service-card reveal">
             <div class="service-icon">💊</div>
             <h3>Medication Management</h3>
-            <p>Ongoing psychiatric care that keeps your treatment plan on track and reviewed regularly.</p>
-            <a href="services.html#medication-management" class="link">Learn more →</a>
+            <p>Exploring medication options with ongoing follow-up on effectiveness, side effects, and changing needs.</p>
+            <a href="medication-management.html" class="link">Learn more →</a>
         </article>
-
         <article class="service-card reveal">
-            <div class="service-icon">🧭</div>
-            <h3>Individual Therapy</h3>
-            <p>One-on-one sessions built around your pace, your goals, your story.</p>
-            <a href="services.html#individual-therapy" class="link">Learn more →</a>
+            <div class="service-icon">🤝</div>
+            <h3>Care Coordination &amp; Support</h3>
+            <p>With your permission, we work with your therapist and other providers and help you find community resources.</p>
+            <a href="services.html#care-coordination" class="link">Learn more →</a>
         </article>
+    </div>
+    <div class="patient-more"><a href="services.html" class="patient_link">See all services →</a></div>
+</section>
 
-        <article class="service-card reveal">
-            <div class="service-icon">👨‍👩‍👧</div>
-            <h3>Family Counseling</h3>
-            <p>Guided sessions that help families communicate and heal side by side.</p>
-            <a href="services.html#family-counseling" class="link">Learn more →</a>
-        </article>
-
-        <article class="service-card reveal">
-            <div class="service-icon">🗂️</div>
-            <h3>Case Management</h3>
-            <p>A dedicated coordinator connecting you to the right resources at the right time.</p>
-            <a href="services.html#case-management" class="link">Learn more →</a>
-        </article>
-
+<!-- Programs carousel (image slider): arrows, dots, swipe, autoplay with pause — see script.js section 9 -->
+<section class="carousel-section" aria-labelledby="programs-title">
+    <div class="carousel-head">
+        <div>
+            <p class="eyebrow">Specialized Support</p>
+            <h2 id="programs-title">Programs for life's transitions</h2>
+        </div>
+        <div class="carousel-controls">
+            <button type="button" class="carousel-btn" data-carousel="prev" aria-label="Previous program">←</button>
+            <button type="button" class="carousel-btn" data-carousel="pause" aria-label="Pause automatic slides">❚❚</button>
+            <button type="button" class="carousel-btn" data-carousel="next" aria-label="Next program">→</button>
+        </div>
+    </div>
+    <div class="carousel" aria-roledescription="carousel" aria-label="Specialized programs">
+        <div class="carousel-viewport">
+            <div class="carousel-track" aria-live="off">
+            <article class="slide" id="slide-1" role="group" aria-roledescription="slide" aria-label="1 of 4: Family Medication Support">
+                <div class="slide-art" style="background:#FFF0CC" aria-hidden="true"><span>💊</span></div>
+                <div class="slide-body">
+                    
+                    <h3>Family Medication Support</h3>
+                    <p>Helps the whole family — not just the patient — understand treatment and how to support it.</p>
+                    <ul class="check-list"><li>What to expect from medication</li><li>Side effects and warning signs</li><li>Crisis planning</li><li>Caregiver roles and support</li></ul>
+                    <a href="programs.html#family-medication-support" class="link">Learn about Family Medication Support →</a>
+                </div>
+            </article>
+            <article class="slide" id="slide-2" role="group" aria-roledescription="slide" aria-label="2 of 4: Community Reintegration">
+                <div class="slide-art" style="background:#E3F0D3" aria-hidden="true"><span>🤝</span></div>
+                <div class="slide-body">
+                    <span class="chip">Signature program</span>
+                    <h3>Community Reintegration</h3>
+                    <p>Our signature program brings psychiatric care, therapy, family meetings, and community resources together in one place.</p>
+                    <ul class="check-list"><li>Psychiatric evaluation &amp; medication management</li><li>Therapy and family meetings</li><li>Employment and housing referrals</li><li>Resource navigation and relapse prevention</li></ul>
+                    <a href="programs.html#community-reintegration" class="link">Learn about Community Reintegration →</a>
+                </div>
+            </article>
+            <article class="slide" id="slide-3" role="group" aria-roledescription="slide" aria-label="3 of 4: Successful Transitions">
+                <div class="slide-art" style="background:#E6ECF7" aria-hidden="true"><span>🚪</span></div>
+                <div class="slide-body">
+                    
+                    <h3>Successful Transitions</h3>
+                    <p>A safe, nonjudgmental bridge for people facing major life changes, so no one has to face them alone.</p>
+                    <ul class="check-list"><li>Military discharge and reintegration into civilian life</li><li>Community reentry after incarceration</li><li>Recovery after hospitalization or residential treatment</li><li>Divorce, grief, and other big changes</li></ul>
+                    <a href="programs.html#successful-transitions" class="link">Learn about Successful Transitions →</a>
+                </div>
+            </article>
+            <article class="slide" id="slide-4" role="group" aria-roledescription="slide" aria-label="4 of 4: Family Restoration">
+                <div class="slide-art" style="background:#FBE9DD" aria-hidden="true"><span>🏡</span></div>
+                <div class="slide-body">
+                    
+                    <h3>Family Restoration</h3>
+                    <p>Improves communication, rebuilds trust, and helps families handle change together.</p>
+                    <ul class="check-list"><li>Divorce and blended families</li><li>Foster care reunification</li><li>Incarceration of a loved one</li><li>Mental illness or addiction recovery in the family</li></ul>
+                    <a href="programs.html#family-restoration" class="link">Learn about Family Restoration →</a>
+                </div>
+            </article>
+            </div>
+        </div>
+        <div class="carousel-dots">
+            <button type="button" class="carousel-dot" aria-label="Show slide 1: Family Medication Support" data-slide="0"></button>
+            <button type="button" class="carousel-dot" aria-label="Show slide 2: Community Reintegration" data-slide="1"></button>
+            <button type="button" class="carousel-dot" aria-label="Show slide 3: Successful Transitions" data-slide="2"></button>
+            <button type="button" class="carousel-dot" aria-label="Show slide 4: Family Restoration" data-slide="3"></button>
+        </div>
     </div>
 </section>
 
-<!-- What to expect: three numbered steps (numbers come from a CSS counter on the <ol>) -->
+<!-- What our name means (from workingonus.org) -->
+<section class="welcome reveal">
+    <div class="welcome-text">
+        <p class="eyebrow">Welcome</p>
+        <h2 class="welcome-heading">What does "Working On Us" mean?</h2>
+        <p>Life is a series of chapters, and navigating them shouldn't be done alone. Whether "us" means the relationship between your mind and body, you and your family, or your past and your future — we are here to help you do the work.</p>
+        <p>Our goal is to help connect who you've been with who you're becoming.</p>
+        <ul class="pillar-chips">
+            <li>Empowering individuals.</li>
+            <li>Strengthening families.</li>
+            <li>Supporting successful transitions.</li>
+        </ul>
+    </div>
+    <div class="welcome-image">
+        <img src="images/illustration-family.svg" alt="Illustration of a family of four standing together under a rising sun" width="600" height="440">
+    </div>
+</section>
+
+<!-- For referring therapists (from workingonus.org) -->
+<section class="referral-band reveal">
+    <div class="referral-inner">
+        <div>
+            <p class="eyebrow">For referring therapists</p>
+            <h2>You don't have to choose between therapy and medication management.</h2>
+            <p>Patients can keep their current therapist while receiving psychiatric care here. With permission, we coordinate with the therapist — and medication management referrals don't require transferring therapy.</p>
+        </div>
+        <div class="referral-actions">
+            <a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Self-Schedule Here</a>
+            <a href="tel:+19102572815" class="btn btn-outline">Refer: (910) 257-2815</a>
+        </div>
+    </div>
+</section>
+
+<!-- Getting started: three numbered steps (numbers come from a CSS counter) + what to bring -->
 <section class="steps">
     <div class="steps-inner">
-        <p class="eyebrow">Getting started</p>
-        <h2>What to expect</h2>
-        <p class="steps-intro">Starting care can feel like the hardest part. Here's how it works.</p>
-
+        <p class="eyebrow">New Patients</p>
+        <h2>Getting started is simple.</h2>
+        <p class="steps-intro">Our staff handle the details so you can focus on feeling better.</p>
         <ol class="steps-list">
             <li class="step reveal">
                 <h3>Reach out</h3>
-                <p>Call our office or send us a message. We'll answer your questions and find a time that works for you.</p>
+                <p>Call (910) 257-2815 or book online. Tell us a little about what you're looking for.</p>
             </li>
             <li class="step reveal">
-                <h3>Your first visit</h3>
-                <p>We get to know you, talk through what brought you in, and build a plan together.</p>
+                <h3>Insurance &amp; intake</h3>
+                <p>We verify your insurance and walk you through intake paperwork.</p>
             </li>
             <li class="step reveal">
-                <h3>Ongoing care</h3>
-                <p>Regular check-ins keep your treatment on track, with adjustments as your needs change.</p>
+                <h3>Your evaluation</h3>
+                <p>Meet your provider for a psychiatric evaluation and leave with a personalized plan.</p>
             </li>
         </ol>
+        <div class="bring-box reveal">
+            <h3>What to bring</h3>
+            <ul class="check-list">
+            <li>Photo ID and insurance card</li>
+            <li>A list of current medications and doses</li>
+            <li>Past psychiatric or hospital records, if you have them</li>
+            <li>A family member or caregiver, if you'd like</li>
+        </ul>
+        </div>
     </div>
 </section>
 
-<!-- FAQ preview: accordion cards, toggled open/closed via js/script.js + .open class -->
+<!-- FAQ preview: accordion cards, toggled open/closed via js/script.js -->
 <section class="Patients reveal">
-    <p class="eyebrow">Patients</p>
-    <h2 class="patients-heading">Patient questions?</h2>
-    <p>Common questions about our services and how we can help your family.</p>
-
-    <!-- Each .patient-card = one question button + its collapsible .answer -->
-    <div class="patient-card">
+    <p class="eyebrow">Questions</p>
+    <h2 class="patients-heading">Common questions</h2>
+    <p>Quick answers about getting started with Working On Us.</p>
+    <div class="patient-card reveal">
         <button class="question-btn">What happens during my first appointment?</button>
-        <p class="answer">Your first visit is about getting to know you, not diagnosing you. We'll talk through what brought you in, your history, and what support looks like for your life right now.</p>
+        <p class="answer">Your first visit is a psychiatric evaluation. Your provider reviews your symptoms, concerns, and any relevant lab results, talks through medication options with you, and builds a personalized treatment plan.</p>
     </div>
-
-    <div class="patient-card">
+    <div class="patient-card reveal">
         <button class="question-btn">Do you accept insurance?</button>
-        <p class="answer">We work with a range of insurance providers and offer guidance on payment options. Reach out to our office and we'll help you figure out what's covered.</p>
+        <p class="answer">Yes. We're in-network with Aetna, Cigna, Carelon Behavioral Health, Blue Cross Blue Shield of North Carolina, Independence Blue Cross (PA), Horizon BCBS of New Jersey, and Curative. Don't see your plan? Call (910) 257-2815 and we'll check for you.</p>
     </div>
-
-    <div class="patient-card">
-        <button class="question-btn">Is what I share confidential?</button>
-        <p class="answer">Yes. Your privacy is protected under federal law. For family and teen clients, we'll walk through together what's shared and what stays between us.</p>
+    <div class="patient-card reveal">
+        <button class="question-btn">Do I have to stop seeing my therapist?</button>
+        <p class="answer">No. You can keep your current therapist while you receive psychiatric care here. With your permission, we coordinate with your therapist so your care stays connected.</p>
     </div>
-
-    <div class="patient-card">
-        <button class="question-btn">How do I know if I need therapy, medication management, or both?</button>
-        <p class="answer">That's exactly what your first appointment helps figure out. Many families find a combination works best, and we'll build a plan around what fits you.</p>
-    </div>
-
-    <div class="patient-card">
-        <button class="question-btn">How often will I need to come in?</button>
-        <p class="answer">It varies by person and goal. Some start weekly and taper down over time, others check in monthly. We'll set a schedule that works for you.</p>
+    <div class="patient-card reveal">
+        <button class="question-btn">Do you offer telehealth appointments?</button>
+        <p class="answer">Yes. We see patients in person in Fayetteville and by telehealth across North Carolina.</p>
     </div>
 
     <div class="patient-more">
-        <a href="faq.html" class="patient_link">More Questions →</a>
+        <a href="faq.html" class="patient_link">See all questions →</a>
     </div>
 </section>
 
-<!-- Our Story: two-column grid (text left, photo right; stacks on phones) -->
+<!-- Our Story: two-column grid (text left, illustration right; stacks on phones) -->
 <section class="ourstory">
     <div class="ourstory-text reveal">
         <p class="eyebrow">Our Story</p>
-        <h2>Led by people who know this community</h2>
-        <p>Working On Us was founded on the belief that behavioral health care should feel personal, not clinical. Our team lives and works in the communities we serve, across North Carolina.</p>
-
-        <!-- Founder credit -->
+        <h2>Healing through collaboration, connection &amp; growth</h2>
+        <p>Working On Us is a family-centered practice helping individuals and families through life's hardest chapters, together. Our mission is to provide thorough, compassionate behavioral health care that respects each person's own path.</p>
         <div class="founder-row">
             <div class="founder-dot"></div>
             <div>
@@ -206,62 +309,100 @@
                 <div class="role">Founder &amp; Owner</div>
             </div>
         </div>
-
-        <a href="about.html" class="btn btn-outline ourstory-btn">Read Our Story</a>
+        <div class="ourstory-actions">
+            <a href="about.html" class="btn btn-outline ourstory-btn">Our Mission</a>
+            <a href="team.html" class="btn btn-outline ourstory-btn">Meet the Team</a>
+        </div>
     </div>
-
     <div class="ourstory-image reveal">
-        <img src="images/pexels-rodnae-productions-7820039.jpg" alt="Placeholder photo of a family in a counseling session (team photo coming soon)">
+        <img src="images/illustration-care.svg" alt="Illustration of a provider and a patient talking in a calm office" width="600" height="440">
     </div>
 </section>
 
 <!-- Call-to-action banner above the footer -->
 <section class="cta-strip reveal">
-    <h2>Ready to take the next step?</h2>
-    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+    <div>
+        <h2>Ready to talk about your treatment options?</h2>
+        <p>New patients are welcome, and your insurance may already cover your care.</p>
+    </div>
+    <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Book an Appointment</a>
+        <a href="tel:+19102572815" class="btn btn-outline-navy">Call (910) 257-2815</a>
+    </div>
 </section>
 </main>
 
-<!-- Site footer: logo, site links, contact info, credits -->
+<!-- Site footer: logo, site links, services, contact info, credits -->
 <footer>
     <div class="footer-grid">
         <div>
             <div class="footer-logo">Working On Us</div>
-            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+            <p class="footer-tagline">Psychiatric medication management and family-centered behavioral health across North Carolina.</p>
+            <p class="footer-crisis">In a crisis, call or text <a href="tel:988">988</a> or dial <a href="tel:911">911</a>.</p>
         </div>
         <div>
-            <h4>Site</h4>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="medication-management.html">Medication Management</a></li>
+                <li><a href="services.html#psychiatric-evaluations">Psychiatric Evaluations</a></li>
+                <li><a href="programs.html">Specialized Programs</a></li>
+                <li><a href="faq.html#insurance">Insurance Accepted</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="faq.html">Patients</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">New Patients</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
             </ul>
         </div>
         <div>
             <h4>Contact</h4>
             <ul>
-                <li><a href="contact.html">1404 Raeford Road</a></li>
-                <li><a href="contact.html">Fayetteville, NC</a></li>
-                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4>Get Started</h4>
-            <ul>
-                <li><a href="contact.html">Request an Appointment</a></li>
-                <li><a href="faq.html">Insurance &amp; Billing</a></li>
-                <li><a href="portal.html">Patient Portal (demo)</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1404+Raeford+Road+Fayetteville+NC+28305" target="_blank" rel="noopener">1404 Raeford Road<br>Fayetteville, NC 28305</a></li>
+                <li><a href="tel:+19102572815">Phone: (910) 257-2815</a></li>
+                <li><span class="footer-text">Fax: (949) 890-4215</span></li>
+                <li><a href="mailto:info@workingonus.org">info@workingonus.org</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
-        <!-- Image and font credits (Creative Commons / free-license sources) -->
-        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services · <a href="privacy.html">Privacy, HIPAA &amp; Accessibility</a></span>
+        <!-- Credits: content source, original artwork, fonts (copyright requirement) -->
+        <span>Content adapted from the practice's site, <a href="https://workingonus.org" target="_blank" rel="noopener">workingonus.org</a>. Illustrations are original artwork by Allen Gaines. Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License).</span>
     </div>
 </footer>
+
+<!-- "Book an appointment" pop-up (modal). Any element with data-open-modal="book-modal"
+     opens it; script.js handles focus, the Escape key, and clicking outside to close. -->
+<div class="modal" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <p class="eyebrow">Now accepting new patients</p>
+        <h2 id="book-modal-title">Book an appointment</h2>
+        <p class="modal-intro">Choose whatever is easiest for you. We'll verify your insurance and help schedule your psychiatric evaluation.</p>
+        <div class="modal-options">
+            <a class="modal-option" href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_116624" target="_blank" rel="noopener">
+                <span class="modal-icon" aria-hidden="true">📅</span>
+                <span><strong>Book online</strong>Pick a time on the practice's secure scheduling page (opens in a new tab).</span>
+            </a>
+            <a class="modal-option" href="tel:+19102572815">
+                <span class="modal-icon" aria-hidden="true">📞</span>
+                <span><strong>Call (910) 257-2815</strong>Talk with our office about insurance and your first visit.</span>
+            </a>
+            <a class="modal-option" href="contact.html#message">
+                <span class="modal-icon" aria-hidden="true">✉️</span>
+                <span><strong>Send a message</strong>Ask a question first. We'll get back to you.</span>
+            </a>
+        </div>
+        <p class="modal-note">In a crisis, call or text <strong>988</strong> or dial <strong>911</strong>.</p>
+    </div>
+</div>
 
 <!-- Back-to-top button: script.js shows it after you scroll down -->
 <button class="to-top" aria-label="Back to top">↑</button>

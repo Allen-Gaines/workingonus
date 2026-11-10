@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found — Working On Us</title>
+    <meta name="description" content="This page could not be found.">
+    <meta name="robots" content="noindex">
+    <!-- Google Fonts: Fraunces (headings) + Inter (body) — the site's only two fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: menus, modal, carousel, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <!-- Dropdown: the link goes to the main page, the ▾ button opens the submenu -->
+            <li class="has-dropdown">
+                <a href="services.html">Services</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-services" aria-label="Services submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-services">
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="medication-management.html">Medication Management</a></li>
+                    <li><a href="programs.html">Specialized Programs</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">New Patients</a></li>
+            <li class="has-dropdown">
+                <a href="about.html">About</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-about" aria-label="About submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-about">
+                    <li><a href="about.html">Our Mission &amp; Story</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- 404 page: GitHub Pages shows 404.html automatically for missing pages -->
+<section class="not-found">
+    <img src="images/illustration-path.svg" alt="" width="600" height="440" class="not-found-art">
+    <p class="eyebrow">Error 404</p>
+    <h1>This page took a different path.</h1>
+    <p class="lead-text">The page you're looking for doesn't exist or may have moved. Let's get you back on track.</p>
+    <div class="cta-actions center">
+        <a href="index.html" class="btn btn-primary">Go to the Homepage</a>
+        <a href="contact.html" class="btn btn-outline-navy">Contact Us</a>
+    </div>
+    <ul class="not-found-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="medication-management.html">Medication Management</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="faq.html">New Patients</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, services, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Psychiatric medication management and family-centered behavioral health across North Carolina.</p>
+            <p class="footer-crisis">In a crisis, call or text <a href="tel:988">988</a> or dial <a href="tel:911">911</a>.</p>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="medication-management.html">Medication Management</a></li>
+                <li><a href="services.html#psychiatric-evaluations">Psychiatric Evaluations</a></li>
+                <li><a href="programs.html">Specialized Programs</a></li>
+                <li><a href="faq.html#insurance">Insurance Accepted</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">New Patients</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1404+Raeford+Road+Fayetteville+NC+28305" target="_blank" rel="noopener">1404 Raeford Road<br>Fayetteville, NC 28305</a></li>
+                <li><a href="tel:+19102572815">Phone: (910) 257-2815</a></li>
+                <li><span class="footer-text">Fax: (949) 890-4215</span></li>
+                <li><a href="mailto:info@workingonus.org">info@workingonus.org</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services · <a href="privacy.html">Privacy, HIPAA &amp; Accessibility</a></span>
+        <!-- Credits: content source, original artwork, fonts (copyright requirement) -->
+        <span>Content adapted from the practice's site, <a href="https://workingonus.org" target="_blank" rel="noopener">workingonus.org</a>. Illustrations are original artwork by Allen Gaines. Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License).</span>
+    </div>
+</footer>
+
+<!-- "Book an appointment" pop-up (modal). Any element with data-open-modal="book-modal"
+     opens it; script.js handles focus, the Escape key, and clicking outside to close. -->
+<div class="modal" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <p class="eyebrow">Now accepting new patients</p>
+        <h2 id="book-modal-title">Book an appointment</h2>
+        <p class="modal-intro">Choose whatever is easiest for you. We'll verify your insurance and help schedule your psychiatric evaluation.</p>
+        <div class="modal-options">
+            <a class="modal-option" href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_116624" target="_blank" rel="noopener">
+                <span class="modal-icon" aria-hidden="true">📅</span>
+                <span><strong>Book online</strong>Pick a time on the practice's secure scheduling page (opens in a new tab).</span>
+            </a>
+            <a class="modal-option" href="tel:+19102572815">
+                <span class="modal-icon" aria-hidden="true">📞</span>
+                <span><strong>Call (910) 257-2815</strong>Talk with our office about insurance and your first visit.</span>
+            </a>
+            <a class="modal-option" href="contact.html#message">
+                <span class="modal-icon" aria-hidden="true">✉️</span>
+                <span><strong>Send a message</strong>Ask a question first. We'll get back to you.</span>
+            </a>
+        </div>
+        <p class="modal-note">In a crisis, call or text <strong>988</strong> or dial <strong>911</strong>.</p>
+    </div>
+</div>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

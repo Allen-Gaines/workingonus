@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services — Working On Us</title>
-    <meta name="description" content="Medication management, individual therapy, family counseling, and case management in Fayetteville, NC.">
+    <meta name="description" content="Psychiatric evaluations, medication management, therapy, family support, and care coordination in Fayetteville, NC.">
 
-    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <!-- Google Fonts: Fraunces (headings) + Inter (body) — the site's only two fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <!-- Shared script: menus, modal, carousel, accordion, FAQ search, form validation, animations -->
     <script src="js/script.js" defer></script>
 </head>
 
@@ -32,13 +32,33 @@
     </button>
 
     <nav id="site-nav" aria-label="Main">
-        <ul>
+        <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="faq.html">Patients</a></li>
-            <li><a href="about.html">About</a></li>
+            <!-- Dropdown: the link goes to the main page, the ▾ button opens the submenu -->
+            <li class="has-dropdown">
+                <a href="services.html">Services</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-services" aria-label="Services submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-services">
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="medication-management.html">Medication Management</a></li>
+                    <li><a href="programs.html">Specialized Programs</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">New Patients</a></li>
+            <li class="has-dropdown">
+                <a href="about.html">About</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-about" aria-label="About submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-about">
+                    <li><a href="about.html">Our Mission &amp; Story</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </li>
             <li><a href="contact.html">Contact</a></li>
-            <!-- Pill-style button that opens the demo patient portal -->
+            <!-- Pill-style button that opens the patient portal -->
             <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
         </ul>
     </nav>
@@ -51,93 +71,151 @@
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Services</nav>
         <p class="eyebrow">Services</p>
         <h1>Our Services</h1>
-        <p>Every family's needs look different. Whether you're here for yourself, your child, or your whole household, our programs meet you where you are right now.</p>
+        <p>Psychiatric care and medication management come first, with therapy, family support, and care coordination built around them.</p>
     </div>
 </section>
 
-<!-- Full services overview (medication management first: the practice's primary service).
-     Each card has an id so homepage "Learn more" links jump straight to it. -->
+<!-- Services overview. Each card has an id so links elsewhere can jump straight to it. -->
 <section class="page-wrap">
     <div class="service-grid service-grid-wide">
-
+        <article class="service-card reveal" id="psychiatric-evaluations">
+            <div class="service-icon">🩺</div>
+            <h2 class="card-title">Psychiatric Evaluations</h2>
+            <p>Your care starts here. Your provider reviews your symptoms, concerns, history, and relevant lab results, then works with you on a personalized treatment plan.</p>
+            
+        </article>
         <article class="service-card reveal" id="medication-management">
             <div class="service-icon">💊</div>
             <h2 class="card-title">Medication Management</h2>
-            <p>Ongoing psychiatric care that keeps your treatment plan on track and reviewed regularly. Our prescribers coordinate closely with your therapist so nothing about your care falls through the cracks.</p>
+            <p>We explore medication options with you and follow up regularly on how well it's working, any side effects, and your changing needs.</p>
+            <a href="medication-management.html" class="link">How medication management works →</a>
         </article>
-
         <article class="service-card reveal" id="individual-therapy">
             <div class="service-icon">🧭</div>
-            <h2 class="card-title">Individual Therapy</h2>
-            <p>One-on-one sessions built around your pace, your goals, your story. Our licensed clinicians work with children, teens, and adults on anxiety, depression, trauma, life transitions, and more — in person or by telehealth.</p>
+            <h2 class="card-title">Individual Psychotherapy</h2>
+            <p>Therapy tailored to your story, with evidence-based coping skills for trauma, anxiety, depression, and ADHD.</p>
+            
         </article>
-
-        <article class="service-card reveal" id="family-counseling">
+        <article class="service-card reveal" id="family-support">
             <div class="service-icon">👨‍👩‍👧</div>
-            <h2 class="card-title">Family Counseling</h2>
-            <p>Guided sessions that help families communicate and heal side by side. We create a steady, neutral space where every member of the family — parents, kids, and teens — has a voice.</p>
+            <h2 class="card-title">Family Support</h2>
+            <p>Family programs that improve communication, rebuild trust, support caregivers, and help families handle change together.</p>
+            <a href="programs.html" class="link">See our family programs →</a>
         </article>
-
-        <article class="service-card reveal" id="case-management">
-            <div class="service-icon">🗂️</div>
-            <h2 class="card-title">Case Management</h2>
-            <p>A dedicated coordinator connecting you to the right resources at the right time — housing support, school advocacy, community programs, and everything in between.</p>
+        <article class="service-card reveal" id="care-coordination">
+            <div class="service-icon">🤝</div>
+            <h2 class="card-title">Care Coordination &amp; Support</h2>
+            <p>With your permission, we collaborate with your therapist and other providers and help you find community resources.</p>
+            
+        </article>
+        <article class="service-card reveal" id="telehealth">
+            <div class="service-icon">💻</div>
+            <h2 class="card-title">Telehealth Across North Carolina</h2>
+            <p>See your provider by secure video from anywhere in North Carolina, or visit us in person in Fayetteville.</p>
+            
         </article>
 
     </div>
+</section>
 
-    <div class="patient-more">
-        <a href="faq.html" class="patient_link">Not sure where to start? Read our patient FAQ →</a>
-    </div>
+<!-- Two ways in: keep your therapist / insurance -->
+<section class="split-band reveal">
+    <article class="split-card">
+        <h2>Keep your therapist</h2>
+        <p>You don't have to choose between therapy and medication management. You can keep seeing your current therapist while you get psychiatric care here, and with your permission we'll coordinate with them.</p>
+        <a href="tel:+19102572815" class="link">Therapists: refer a patient at (910) 257-2815 →</a>
+    </article>
+    <article class="split-card">
+        <h2>Insurance accepted</h2>
+        <p>We're in-network with Aetna, Cigna, Carelon Behavioral Health, Blue Cross Blue Shield of North Carolina, Independence Blue Cross (PA), Horizon BCBS of New Jersey, and Curative.</p>
+        <a href="faq.html#insurance" class="link">Insurance &amp; getting started →</a>
+    </article>
 </section>
 
 <!-- Call-to-action banner above the footer -->
 <section class="cta-strip reveal">
-    <h2>Ready to take the next step?</h2>
-    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+    <div>
+        <h2>Ready to talk about your treatment options?</h2>
+        <p>New patients are welcome, and your insurance may already cover your care.</p>
+    </div>
+    <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Book an Appointment</a>
+        <a href="tel:+19102572815" class="btn btn-outline-navy">Call (910) 257-2815</a>
+    </div>
 </section>
 </main>
 
-<!-- Site footer: logo, site links, contact info, credits -->
+<!-- Site footer: logo, site links, services, contact info, credits -->
 <footer>
     <div class="footer-grid">
         <div>
             <div class="footer-logo">Working On Us</div>
-            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+            <p class="footer-tagline">Psychiatric medication management and family-centered behavioral health across North Carolina.</p>
+            <p class="footer-crisis">In a crisis, call or text <a href="tel:988">988</a> or dial <a href="tel:911">911</a>.</p>
         </div>
         <div>
-            <h4>Site</h4>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="medication-management.html">Medication Management</a></li>
+                <li><a href="services.html#psychiatric-evaluations">Psychiatric Evaluations</a></li>
+                <li><a href="programs.html">Specialized Programs</a></li>
+                <li><a href="faq.html#insurance">Insurance Accepted</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="faq.html">Patients</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">New Patients</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
             </ul>
         </div>
         <div>
             <h4>Contact</h4>
             <ul>
-                <li><a href="contact.html">1404 Raeford Road</a></li>
-                <li><a href="contact.html">Fayetteville, NC</a></li>
-                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4>Get Started</h4>
-            <ul>
-                <li><a href="contact.html">Request an Appointment</a></li>
-                <li><a href="faq.html">Insurance &amp; Billing</a></li>
-                <li><a href="portal.html">Patient Portal (demo)</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1404+Raeford+Road+Fayetteville+NC+28305" target="_blank" rel="noopener">1404 Raeford Road<br>Fayetteville, NC 28305</a></li>
+                <li><a href="tel:+19102572815">Phone: (910) 257-2815</a></li>
+                <li><span class="footer-text">Fax: (949) 890-4215</span></li>
+                <li><a href="mailto:info@workingonus.org">info@workingonus.org</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
-        <!-- Image and font credits (Creative Commons / free-license sources) -->
-        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services · <a href="privacy.html">Privacy, HIPAA &amp; Accessibility</a></span>
+        <!-- Credits: content source, original artwork, fonts (copyright requirement) -->
+        <span>Content adapted from the practice's site, <a href="https://workingonus.org" target="_blank" rel="noopener">workingonus.org</a>. Illustrations are original artwork by Allen Gaines. Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License).</span>
     </div>
 </footer>
+
+<!-- "Book an appointment" pop-up (modal). Any element with data-open-modal="book-modal"
+     opens it; script.js handles focus, the Escape key, and clicking outside to close. -->
+<div class="modal" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <p class="eyebrow">Now accepting new patients</p>
+        <h2 id="book-modal-title">Book an appointment</h2>
+        <p class="modal-intro">Choose whatever is easiest for you. We'll verify your insurance and help schedule your psychiatric evaluation.</p>
+        <div class="modal-options">
+            <a class="modal-option" href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_116624" target="_blank" rel="noopener">
+                <span class="modal-icon" aria-hidden="true">📅</span>
+                <span><strong>Book online</strong>Pick a time on the practice's secure scheduling page (opens in a new tab).</span>
+            </a>
+            <a class="modal-option" href="tel:+19102572815">
+                <span class="modal-icon" aria-hidden="true">📞</span>
+                <span><strong>Call (910) 257-2815</strong>Talk with our office about insurance and your first visit.</span>
+            </a>
+            <a class="modal-option" href="contact.html#message">
+                <span class="modal-icon" aria-hidden="true">✉️</span>
+                <span><strong>Send a message</strong>Ask a question first. We'll get back to you.</span>
+            </a>
+        </div>
+        <p class="modal-note">In a crisis, call or text <strong>988</strong> or dial <strong>911</strong>.</p>
+    </div>
+</div>
 
 <!-- Back-to-top button: script.js shows it after you scroll down -->
 <button class="to-top" aria-label="Back to top">↑</button>

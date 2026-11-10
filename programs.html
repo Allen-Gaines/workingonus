@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialized Programs — Working On Us</title>
+    <meta name="description" content="Family Medication Support, Community Reintegration, Successful Transitions, and Family Restoration programs in Fayetteville, NC.">
+
+    <!-- Google Fonts: Fraunces (headings) + Inter (body) — the site's only two fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: menus, modal, carousel, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <!-- Dropdown: the link goes to the main page, the ▾ button opens the submenu -->
+            <li class="has-dropdown">
+                <a href="services.html">Services</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-services" aria-label="Services submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-services">
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="medication-management.html">Medication Management</a></li>
+                    <li><a href="programs.html">Specialized Programs</a></li>
+                </ul>
+            </li>
+            <li><a href="faq.html">New Patients</a></li>
+            <li class="has-dropdown">
+                <a href="about.html">About</a>
+                <button class="dropdown-toggle" aria-expanded="false" aria-controls="dd-about" aria-label="About submenu">
+                    <span aria-hidden="true">▾</span>
+                </button>
+                <ul class="dropdown" id="dd-about">
+                    <li><a href="about.html">Our Mission &amp; Story</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Page banner: navy band with breadcrumb, page title and intro -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <a href="services.html">Services</a> <span aria-hidden="true">/</span> Specialized Programs</nav>
+        <p class="eyebrow">Specialized Programs</p>
+        <h1>Specialized support for life's transitions</h1>
+        <p>When medication is one part of a bigger change, these programs add therapy, family meetings, and community support.</p>
+    </div>
+</section>
+
+<!-- Jump links to each program on this page -->
+<nav class="program-strip" aria-label="Programs on this page">
+        <a href="#family-medication-support" class="program-jump"><span aria-hidden="true">💊</span> Family Medication Support</a>
+        <a href="#community-reintegration" class="program-jump"><span aria-hidden="true">🤝</span> Community Reintegration</a>
+        <a href="#successful-transitions" class="program-jump"><span aria-hidden="true">🚪</span> Successful Transitions</a>
+        <a href="#family-restoration" class="program-jump"><span aria-hidden="true">🏡</span> Family Restoration</a>
+</nav>
+
+<section class="program-section reveal " id="family-medication-support">
+    <div class="program-text">
+        
+        <h2>Family Medication Support</h2>
+        <p class="lead-text">Helps the whole family — not just the patient — understand treatment and how to support it.</p>
+        <ul class="check-list two-col-list"><li>What to expect from medication</li><li>Side effects and warning signs</li><li>Crisis planning</li><li>Caregiver roles and support</li></ul>
+        <a href="contact.html?program=family-medication-support#message" class="btn btn-primary">Ask About This Program</a>
+    </div>
+    <div class="program-art" style="background:#FFF0CC">
+        <img src="images/illustration-family.svg" alt="" width="600" height="440">
+    </div>
+</section>
+
+<section class="program-section reveal reverse" id="community-reintegration">
+    <div class="program-text">
+        <span class="chip">Signature program</span>
+        <h2>Community Reintegration</h2>
+        <p class="lead-text">Our signature program brings psychiatric care, therapy, family meetings, and community resources together in one place.</p>
+        <ul class="check-list two-col-list"><li>Psychiatric evaluation &amp; medication management</li><li>Therapy and family meetings</li><li>Employment and housing referrals</li><li>Resource navigation and relapse prevention</li></ul>
+        <a href="contact.html?program=community-reintegration#message" class="btn btn-primary">Ask About This Program</a>
+    </div>
+    <div class="program-art" style="background:#E3F0D3">
+        <img src="images/illustration-care.svg" alt="" width="600" height="440">
+    </div>
+</section>
+
+<section class="program-section reveal " id="successful-transitions">
+    <div class="program-text">
+        
+        <h2>Successful Transitions</h2>
+        <p class="lead-text">A safe, nonjudgmental bridge for people facing major life changes, so no one has to face them alone.</p>
+        <ul class="check-list two-col-list"><li>Military discharge and reintegration into civilian life</li><li>Community reentry after incarceration</li><li>Recovery after hospitalization or residential treatment</li><li>Divorce, grief, and other big changes</li></ul>
+        <a href="contact.html?program=successful-transitions#message" class="btn btn-primary">Ask About This Program</a>
+    </div>
+    <div class="program-art" style="background:#E6ECF7">
+        <img src="images/illustration-path.svg" alt="" width="600" height="440">
+    </div>
+</section>
+
+<section class="program-section reveal reverse" id="family-restoration">
+    <div class="program-text">
+        
+        <h2>Family Restoration</h2>
+        <p class="lead-text">Improves communication, rebuilds trust, and helps families handle change together.</p>
+        <ul class="check-list two-col-list"><li>Divorce and blended families</li><li>Foster care reunification</li><li>Incarceration of a loved one</li><li>Mental illness or addiction recovery in the family</li></ul>
+        <a href="contact.html?program=family-restoration#message" class="btn btn-primary">Ask About This Program</a>
+    </div>
+    <div class="program-art" style="background:#FBE9DD">
+        <img src="images/illustration-family.svg" alt="" width="600" height="440">
+    </div>
+</section>
+
+<!-- Not sure which fits -->
+<section class="page-wrap center-text reveal">
+    <h2 class="services-heading">Not sure which program fits?</h2>
+    <p class="lead-text narrow">Start with a conversation. We'll listen to what's going on and point you toward the right mix of care.</p>
+    <div class="cta-actions center"><a href="contact.html" class="btn btn-primary" data-open-modal="book-modal">Book an Appointment</a><a href="tel:+19102572815" class="btn btn-outline-navy">Call (910) 257-2815</a></div>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, services, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Psychiatric medication management and family-centered behavioral health across North Carolina.</p>
+            <p class="footer-crisis">In a crisis, call or text <a href="tel:988">988</a> or dial <a href="tel:911">911</a>.</p>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li><a href="medication-management.html">Medication Management</a></li>
+                <li><a href="services.html#psychiatric-evaluations">Psychiatric Evaluations</a></li>
+                <li><a href="programs.html">Specialized Programs</a></li>
+                <li><a href="faq.html#insurance">Insurance Accepted</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">New Patients</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1404+Raeford+Road+Fayetteville+NC+28305" target="_blank" rel="noopener">1404 Raeford Road<br>Fayetteville, NC 28305</a></li>
+                <li><a href="tel:+19102572815">Phone: (910) 257-2815</a></li>
+                <li><span class="footer-text">Fax: (949) 890-4215</span></li>
+                <li><a href="mailto:info@workingonus.org">info@workingonus.org</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services · <a href="privacy.html">Privacy, HIPAA &amp; Accessibility</a></span>
+        <!-- Credits: content source, original artwork, fonts (copyright requirement) -->
+        <span>Content adapted from the practice's site, <a href="https://workingonus.org" target="_blank" rel="noopener">workingonus.org</a>. Illustrations are original artwork by Allen Gaines. Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License).</span>
+    </div>
+</footer>
+
+<!-- "Book an appointment" pop-up (modal). Any element with data-open-modal="book-modal"
+     opens it; script.js handles focus, the Escape key, and clicking outside to close. -->
+<div class="modal" id="book-modal" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <p class="eyebrow">Now accepting new patients</p>
+        <h2 id="book-modal-title">Book an appointment</h2>
+        <p class="modal-intro">Choose whatever is easiest for you. We'll verify your insurance and help schedule your psychiatric evaluation.</p>
+        <div class="modal-options">
+            <a class="modal-option" href="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_116624" target="_blank" rel="noopener">
+                <span class="modal-icon" aria-hidden="true">📅</span>
+                <span><strong>Book online</strong>Pick a time on the practice's secure scheduling page (opens in a new tab).</span>
+            </a>
+            <a class="modal-option" href="tel:+19102572815">
+                <span class="modal-icon" aria-hidden="true">📞</span>
+                <span><strong>Call (910) 257-2815</strong>Talk with our office about insurance and your first visit.</span>
+            </a>
+            <a class="modal-option" href="contact.html#message">
+                <span class="modal-icon" aria-hidden="true">✉️</span>
+                <span><strong>Send a message</strong>Ask a question first. We'll get back to you.</span>
+            </a>
+        </div>
+        <p class="modal-note">In a crisis, call or text <strong>988</strong> or dial <strong>911</strong>.</p>
+    </div>
+</div>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>
