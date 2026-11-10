@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — Working On Us</title>
+    <meta name="description" content="Learn about Working On Us Behavioral Health &amp; Family Services and founder Lakesha McNeil.">
+
+    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="faq.html">Patients</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Page banner: navy band with breadcrumb, page title and intro -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> About</nav>
+        <p class="eyebrow">About</p>
+        <h1>A place where families find strength</h1>
+        <p>At Working On Us Behavioral Health &amp; Family Services, we believe every family deserves the support, tools, and compassion needed to thrive.</p>
+    </div>
+</section>
+
+<!-- Mission: what we believe -->
+<section class="page-wrap reveal">
+    <h2 class="services-heading">Our mission</h2>
+    <p>Our team of dedicated professionals walks alongside individuals and families — meeting you where you are and guiding you toward lasting change.</p>
+    <p>From behavioral health counseling to family preservation and community support, our programs are designed with one goal in mind: your well-being and the well-being of your family.</p>
+</section>
+
+<!-- Our Story: same navy two-column grid as the homepage -->
+<section class="ourstory">
+    <div class="ourstory-text reveal">
+        <p class="eyebrow">Our Story</p>
+        <h2>Led by people who know this community</h2>
+        <p>Working On Us was founded on the belief that behavioral health care should feel personal, not clinical. Our team lives and works in the communities we serve, across North Carolina.</p>
+
+        <!-- Founder credit -->
+        <div class="founder-row">
+            <div class="founder-dot"></div>
+            <div>
+                <div class="name">Lakesha McNeil</div>
+                <div class="role">Founder &amp; Owner</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ourstory-image reveal">
+        <img src="images/pexels-rodnae-productions-7820039.jpg" alt="Placeholder photo of a family in a counseling session (team photo coming soon)">
+    </div>
+</section>
+
+<!-- Call-to-action banner above the footer -->
+<section class="cta-strip reveal">
+    <h2>Ready to take the next step?</h2>
+    <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+        </div>
+        <div>
+            <h4>Site</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">Patients</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="contact.html">1404 Raeford Road</a></li>
+                <li><a href="contact.html">Fayetteville, NC</a></li>
+                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Get Started</h4>
+            <ul>
+                <li><a href="contact.html">Request an Appointment</a></li>
+                <li><a href="faq.html">Insurance &amp; Billing</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
+        <!-- Image and font credits (Creative Commons / free-license sources) -->
+        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+    </div>
+</footer>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>
