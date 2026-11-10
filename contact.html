@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Working On Us</title>
+    <meta name="description" content="Contact Working On Us at 1404 Raeford Road, Fayetteville, NC, or send us a message.">
+
+    <!-- Preconnect + load Google Fonts (Fraunces for headings, Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Shared script: mobile menu, nav highlight, accordion, FAQ search, form validation, animations -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<!-- Lets keyboard and screen-reader users jump past the nav (hidden until focused) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Site header: logo + primary nav (same on every page). Sticks to the top while scrolling. -->
+<header class="site-header">
+    <a href="index.html" class="logo" aria-label="Working On Us home">
+        <span class="logo-mark" aria-hidden="true"></span>Working On Us
+    </a>
+
+    <!-- Hamburger button: only visible on phones; script.js opens/closes the menu -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="faq.html">Patients</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Pill-style button that opens the demo patient portal -->
+            <li class="nav-portal"><a href="portal.html">Patient Portal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- Page banner: navy band with breadcrumb, page title and intro -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Contact</nav>
+        <p class="eyebrow">Contact</p>
+        <h1>We'd love to hear from you</h1>
+        <p>Whether you're ready to schedule a first appointment or just have a question, reaching out is the first step. Call, email, or stop by — we'll take it from there.</p>
+    </div>
+</section>
+
+<!-- Contact details: three cards (reuse .service-card styling) -->
+<section class="page-wrap">
+    <div class="contact-grid">
+
+        <article class="service-card reveal">
+            <div class="service-icon">📍</div>
+            <h2 class="card-title">Visit Us</h2>
+            <p>1404 Raeford Road<br>Fayetteville, NC</p>
+            <!-- Opens Google Maps directions in a new tab -->
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=1404+Raeford+Road+Fayetteville+NC" class="link" target="_blank" rel="noopener">Get directions →</a>
+        </article>
+
+        <article class="service-card reveal">
+            <div class="service-icon">📞</div>
+            <h2 class="card-title">Call Us</h2>
+            <p><a href="tel:+19102572815" class="link">(910) 257-2815</a><br>Monday – Friday, 9am – 5pm</p>
+        </article>
+
+        <article class="service-card reveal">
+            <div class="service-icon">✉️</div>
+            <h2 class="card-title">Email Us</h2>
+            <p><a href="mailto:hello@workingonus.com" class="link">hello@workingonus.com</a><br>We reply within one business day.</p>
+        </article>
+
+    </div>
+</section>
+
+<!-- Contact form: validated in js/script.js (no back end yet; PHP comes in a later milestone) -->
+<section class="contact-form-section reveal">
+    <h2>Send us a message</h2>
+    <p class="form-note">Please don't include medical details or personal health information in this form — we'll talk through that privately. If you are in crisis, call or text <strong>988</strong>, or call <strong>911</strong> in an emergency.</p>
+
+    <!-- novalidate turns off the browser's built-in popups so our JavaScript handles the errors -->
+    <form id="contact-form" novalidate>
+        <div class="form-row">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name">
+            <span class="error-msg" id="name-error" aria-live="polite"></span>
+        </div>
+
+        <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+            <span class="error-msg" id="email-error" aria-live="polite"></span>
+        </div>
+
+        <div class="form-row">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(910) 555-1234">
+            <span class="error-msg" id="phone-error" aria-live="polite"></span>
+        </div>
+
+        <div class="form-row">
+            <label for="reason">Reason for reaching out</label>
+            <select id="reason" name="reason">
+                <option value="">Choose one…</option>
+                <option value="new-patient">New patient appointment</option>
+                <option value="insurance">Insurance &amp; billing</option>
+                <option value="general">General question</option>
+                <option value="other">Other</option>
+            </select>
+            <span class="error-msg" id="reason-error" aria-live="polite"></span>
+        </div>
+
+        <div class="form-row">
+            <label for="message">Message</label>
+            <!-- maxlength caps it at 500; script.js shows a live character counter -->
+            <textarea id="message" name="message" maxlength="500"></textarea>
+            <div class="message-meta">
+                <span class="error-msg" id="message-error" aria-live="polite"></span>
+                <span class="char-count" id="message-count">0 / 500</span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p id="form-success" class="form-success" role="status"></p>
+    </form>
+
+    <div class="patient-more">
+        <a href="faq.html" class="patient_link">Wondering what to expect first? Read our patient FAQ →</a>
+    </div>
+</section>
+</main>
+
+<!-- Site footer: logo, site links, contact info, credits -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-logo">Working On Us</div>
+            <p class="footer-tagline">Behavioral health &amp; family services across North Carolina.</p>
+        </div>
+        <div>
+            <h4>Site</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">Patients</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="contact.html">1404 Raeford Road</a></li>
+                <li><a href="contact.html">Fayetteville, NC</a></li>
+                <li><a href="tel:+19102572815">(910) 257-2815</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Get Started</h4>
+            <ul>
+                <li><a href="contact.html">Request an Appointment</a></li>
+                <li><a href="faq.html">Insurance &amp; Billing</a></li>
+                <li><a href="portal.html">Patient Portal (demo)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Working On Us Behavioral Health &amp; Family Services</span>
+        <!-- Image and font credits (Creative Commons / free-license sources) -->
+        <span>Photo by <a href="https://www.pexels.com/@rodnae-prod/" target="_blank" rel="noopener">RODNAE Productions</a> on <a href="https://www.pexels.com/photo/7820039/" target="_blank" rel="noopener">Pexels</a> · Fonts: Fraunces &amp; Inter via <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a> (SIL Open Font License)</span>
+    </div>
+</footer>
+
+<!-- Back-to-top button: script.js shows it after you scroll down -->
+<button class="to-top" aria-label="Back to top">↑</button>
+</body>
+</html>
